@@ -50,7 +50,7 @@ const AboutSection = () => {
       </div>
       <div className="mt-4 flex justify-center">
         <a
-          href="/resume.pdf"
+          href="/portfolio/resume.pdf"
           target="_blank"
           className="flex gap-2 items-center bg-white bg-opacity-20 backdrop-blur-lg text-white border border-white border-opacity-25 py-2 px-8 rounded-full text-xl transition-all hover:bg-opacity-30 hover:shadow-lg"
         >
