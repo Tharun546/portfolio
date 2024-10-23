@@ -53,7 +53,7 @@ const Tools = () => {
         <a
           className="inline-flex items-center font-medium leading-tight text-slate-200 font-semibold text-slate-200 group"
           aria-label="View Full Project Archive"
-          href="/resume.pdf"
+          href="/portfolio/resume.pdf"
           target="_blank"
         >
           <span>

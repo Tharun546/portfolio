@@ -80,14 +80,20 @@ const Achievements = () => {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/achievements/vc_sajjanar_app_annoucement.png"
+              src={
+                import.meta.env.BASE_URL +
+                `/achievements/vc_sajjanar_app_annoucement.png`
+              }
               alt="hero template"
               width={500}
               height={500}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/achievements/medaram_team_grp_photo.jpg"
+              src={
+                import.meta.env.BASE_URL +
+                `/achievements/medaram_team_grp_photo.jpg`
+              }
               alt="feature template"
               width={500}
               height={500}
@@ -124,14 +130,14 @@ const Achievements = () => {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/fudoo_thumbnail.png"
+              src={import.meta.env.BASE_URL + `fudoo_thumbnail.png`}
               alt="Fudoo Thumbnail"
               width={500}
               height={500}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/wvento_thumbnail.png"
+              src={import.meta.env.BASE_URL + `wvento_thumbnail.png`}
               alt="Wvento Thumbnail"
               width={500}
               height={500}

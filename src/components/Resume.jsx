@@ -10,7 +10,7 @@ export default function Resume() {
               My Resume
             </h1>
             <iframe
-              src="https://www.canva.com/design/DAGQGrLZoLo/unasph37XDb_aLEonSxHUg/view?embed"
+              src=""
               allowfullscreen=""
               width="600"
               height="800"

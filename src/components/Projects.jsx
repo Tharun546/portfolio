@@ -9,8 +9,7 @@ export default function Projects() {
       description:
         "It provides information on TSRTC special buses to public who want to travel to Medaram Jathara from different places of Telangana and neighboring states. It also provides emergency contact information and tourist spots near medaram and the hotels nearby. It navigates people to medaram and provides TSRTC bus and ticket booking facility.",
       date: "Jan 2022 - Feb 2022",
-      image:
-        "https://play-lh.googleusercontent.com/5hZPYrEjS0AvbhLU79lY8X5qL1vLA3u4s01IL01FrV1N3fpFiDFCG7rW_tZDuchQivc=w480-h960-rw",
+      image: "tsrtc_logo.webp",
       link: "https://play.google.com/store/apps/details?id=com.rtc.medaram",
 
       builtWith: ["Java", "Php", "Firebase", "Mysql", "Google Cloud"],
@@ -162,7 +161,7 @@ export default function Projects() {
         <a
           className="inline-flex items-center font-medium leading-tight text-slate-200 font-semibold text-slate-200 group"
           aria-label="View Full Project Archive"
-          href="/archive/projects"
+          href="/portfolio/archive/projects"
         >
           <span>
             <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
