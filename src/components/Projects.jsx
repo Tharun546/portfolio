@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("Mobile App");
@@ -156,10 +157,9 @@ export default function Projects() {
         ))}
       </div>
       <div className="mt-12">
-        <a
+        <Link
           className="inline-flex items-center font-medium leading-tight text-slate-200 font-semibold text-slate-200 group"
-          aria-label="View Full Project Archive"
-          href="/portfolio/archive/projects"
+          to="/archive/projects"
         >
           <span>
             <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
@@ -184,7 +184,7 @@ export default function Projects() {
               </svg>
             </span>
           </span>
-        </a>
+        </Link>
       </div>
     </div>
   );
