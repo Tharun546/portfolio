@@ -14,7 +14,7 @@ export default function Experience() {
   return (
     <div className="px-4 md:px-6 lg:px-10">
       <div className="flex flex-col gap-4">
-        <h1 className="text-4xl md:text-6xl text-center md:text-start lg:text-8xl font-black">
+        <h1 className="text-4xl md:text-6xl text-center md:text-start lg:text-7xl font-black">
           WORKING <span className="text-neutral-700">EXPERIENCE</span>
         </h1>
       </div>

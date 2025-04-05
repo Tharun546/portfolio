@@ -28,7 +28,7 @@ export default function Internships() {
   return (
     <div className="px-4 md:px-6 lg:px-10">
       <div className="flex flex-col gap-4">
-        <h1 className="text-4xl md:text-6xl text-center md:text-start lg:text-8xl font-black uppercase">
+        <h1 className="text-4xl md:text-6xl text-center md:text-start lg:text-7xl font-black uppercase">
           Licenses &<span className="text-neutral-700"> certifications</span>
         </h1>
       </div>

@@ -31,7 +31,7 @@ const Home = () => {
     <>
       <div className="px-6 md:px-10 mb-24">
         <div className="flex flex-col gap-4 text-center md:text-left">
-          <h1 className="text-4xl md:text-8xl sm:mt-10 font-black">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl sm:mt-10 font-black">
             FULLSTACK <span className="text-neutral-700">DEVELOPER</span>
           </h1>
           <p className="text-neutral-400 text-base md:text-lg text-start">
