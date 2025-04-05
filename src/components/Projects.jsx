@@ -122,18 +122,16 @@ export default function Projects() {
             className="p-4 md:p-6 rounded-lg hover:bg-neutral-800 transition duration-300 ease-in-out"
             onClick={() => handleTabClick(project.title)}
           >
-            <div className="flex items-center">
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
               <img
                 src={project.image}
-                width={125}
-                height={150}
-                alt="Mark Smith"
-                className="rounded-lg flex-shrink-0 mr-4 bg-white"
+                alt={project.title}
+                className="rounded-lg bg-white w-full md:w-[125px] h-auto object-contain"
               />
 
               <div className="flex flex-col w-full">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-bold text-white">
+                  <h2 className="text-xl lg:text-2xl font-bold text-white">
                     {project.title}
                   </h2>
 
@@ -142,7 +140,7 @@ export default function Projects() {
                   </span>
                 </div>
                 <p className="text-gray-400 text-sm my-3">{project.date}</p>
-                <div className="flex gap-1">
+                <div className="flex flex-wrap gap-2">
                   {project.builtWith.map((tech, idx) => (
                     <div
                       key={idx}
