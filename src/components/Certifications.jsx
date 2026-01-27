@@ -1,27 +1,20 @@
 import React from "react";
 
-export default function Internships() {
+export default function Certifications() {
   const experiences = [
     {
       title: "Android Basics in Kotlin",
       description:
-        "Certified for completing the Google Supported Virtual Internship Program Organised by SmartInternz in collaboration with AICTE ",
+        "Google-supported program covering Android fundamentals, UI components, and app architecture basics using Kotlin.",
       issued: "Oct 2022",
       link: "https://smartinternz.com/internships/google_stu_certificates/7515989d1c2f94c0cf8c5e4aefd3d12b",
     },
     {
       title: "Google Cloud Big Data and ML Fundamentals",
       description:
-        "It introduced It explores the processes, challenges, and benefits of building a big data pipeline and machine learning models with Vertex AI on Google Cloud",
+        "Introduction to data pipelines, cloud-based analytics, and ML workflows using Google Cloud and Vertex AI.",
       issued: "Aug 2022",
       link: "https://www.coursera.org/account/accomplishments/verify/A8HQQ6Z5L6R9",
-    },
-    {
-      title: "The Fundamentals of Digital Marketing",
-      description:
-        "I have learnt how to build and optimize a website, improve your search engine rankings, use paid ads, create engaging content, and leverage social media and email marketing.",
-      issued: "July 2022",
-      link: "https://skillshop.exceedlms.com/student/award/ZqpVfUc4XwpLCvkNWKpp3RKj",
     },
   ];
 

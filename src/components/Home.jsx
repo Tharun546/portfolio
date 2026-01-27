@@ -7,54 +7,49 @@ import {
   IconFolder,
   IconCertificate,
 } from "@tabler/icons-react";
-import Internships from "./Internships";
+import Certifications from "./Certifications";
 
 const Home = () => {
   const stats = [
     {
       icon: <IconFolder className="h-12 w-12 text-blue-500" />,
-      number: "20+",
-      description: "Completed Projects",
+      number: "10+",
+      description: "Production & Academic Projects",
+    },
+    {
+      icon: <IconGitBranch className="h-12 w-12 text-green-500" />,
+      number: "3+",
+      description: "Production Deployed Systems",
     },
     {
       icon: <IconCertificate className="h-12 w-12 text-yellow-500" />,
       number: "10+",
-      description: "Certifications",
-    },
-    {
-      icon: <IconGitBranch className="h-12 w-12 text-green-500" />,
-      number: "1000+",
-      description: "Mentored Students",
+      description: "Technical Certifications",
     },
   ];
+
   return (
     <>
       <div className="px-6 md:px-10 mb-24">
         <div className="flex flex-col gap-4 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl lg:text-7xl sm:mt-10 font-black">
-            FULLSTACK <span className="text-neutral-700">DEVELOPER</span>
+            SOFTWARE{" "}
+            <span className="text-neutral-700">DEVELOPMENT ENGINEER</span>
           </h1>
           <p className="text-neutral-400 text-base md:text-lg text-start">
-            With a deep love for open-source development and building meaningful
-            digital experiences. With a strong background in{" "}
-            <span className="text-white">Fullstack development</span>,
-            particularly with the MERN stack, I thrive in both front-end and
-            back-end environments.
+            I’m a Software Development Engineer with hands-on experience
+            building and shipping{" "}
+            <span className="text-white">
+              production-grade web and mobile applications.{" "}
+            </span>
+            I’ve worked across the stack - from frontend interfaces to backend
+            APIs and cloud deployments - focusing on reliability, performance,
+            and real-world usability.
           </p>
           <p className="text-neutral-400 text-base md:text-lg text-start">
-            In addition to my technical skills, I am a{" "}
-            <span className="text-white">content creator</span>, using my
-            platform to share knowledge, build community, and inspire others in
-            the tech space.
-          </p>
-          <p className="text-neutral-400 text-base md:text-lg text-start">
-            I’ve led and contributed to various{" "}
-            <span className="text-white">web </span> and{" "}
-            <span className="text-white">mobile application </span>
-            projects, focusing on user-centric designs and optimized
-            functionality. I continuously explore new technologies and
-            frameworks to create dynamic, innovative solutions that make a
-            difference.
+            I’ve contributed to and led projects used by real users, including
+            public-facing and government-backed systems, and I enjoy taking
+            ownership from problem definition to deployment.
           </p>
         </div>
         <div className="flex flex-wrap gap-6 my-10 justify-center md:justify-start">
@@ -79,7 +74,7 @@ const Home = () => {
       </div>
 
       <div className="mb-20">
-        <Internships />
+        <Certifications />
       </div>
 
       <div className="mb-20">

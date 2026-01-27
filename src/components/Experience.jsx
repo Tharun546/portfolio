@@ -5,7 +5,7 @@ export default function Experience() {
     {
       title: "Accenture",
       description:
-        "Contributed to the development and maintenance of software Web Apps, collaborating teams to deliver high-quality projects.",
+        "Worked as an Associate Software Engineer on production web applications, contributing to feature development, bug fixes, and performance improvements in a team-based environment. Collaborated with cross-functional teams to implement backend APIs and frontend components following enterprise engineering standards.",
       date: "Feb 2024 - Aug 2024",
       link: "https://www.accenture.com/",
     },

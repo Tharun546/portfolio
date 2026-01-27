@@ -2,85 +2,54 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("Mobile App");
-
-  const projects = [
-    {
-      title: "TSRTC Medaram Jathara",
-      description:
-        "It provides information on TSRTC special buses to public who want to travel to Medaram Jathara from different places of Telangana and neighboring states. It also provides emergency contact information and tourist spots near medaram and the hotels nearby. It navigates people to medaram and provides TSRTC bus and ticket booking facility.",
-      date: "Jan 2022 - Feb 2022",
-      image: "tsrtc_logo.webp",
-      link: "https://play.google.com/store/apps/details?id=com.rtc.medaram",
-
-      builtWith: ["Java", "Php", "Firebase", "Mysql", "Google Cloud"],
-      category: "Mobile App",
-    },
-    {
-      title: "Wevento",
-      description:
-        "This app will help in populating the events around you in that location only and help you in getting updated all the time. The main motto is to show All events details at your finger tips",
-      date: "Apr 2022 - Mar 2023",
-      image: "wvento_thumbnail.png",
-      builtWith: ["Kotlin", "Php", "Mysql", "Firebase"],
-      category: "Mobile App",
-    },
+  const featuredProjects = [
     {
       title: "Fudoo",
-      description:
-        "Developed and implemented design strategies for new product lines, collaborated closely with engineers and product managers.",
-      date: "Jun 2023 - Aug 2024",
+      oneLiner:
+        "Built a real-time, multi-vendor food ordering mobile application used in production.",
+      problem:
+        "Local food vendors lacked a centralized platform for digital menu management and real-time ordering.",
+      action:
+        "Designed and built a React Native app with Firebase real-time sync and Node.js backend deployed on AWS.",
+      result:
+        "Reduced order update latency by ~30% and enabled multiple vendors to onboard digitally.",
+      date: "Jun 2023 – Aug 2024",
       image: "fudoo_thumbnail.png",
       link: "https://play.google.com/store/apps/details?id=com.kitsw.canteen",
-      builtWith: [
-        "React Native",
-        "Expo",
-        "Firebase",
-        "Aws",
-        "Node.js",
-        "React.js",
-      ],
-      category: "Mobile App",
+      signals: ["Production App", "Real-time System", "Multi-vendor Platform"],
+      builtWith: ["React Native", "Firebase", "Node.js", "AWS"],
     },
     {
-      title: "Feedback Flow",
-      description:
-        "The Web App which enables users to collect feedback from a forms and the feedback collection widget is easy to embed to their landing website.",
-      date: "Sep 2024 - Present",
+      title: "TSRTC Medaram Jathara",
+      oneLiner:
+        "Government-backed mobile app providing transport and navigation info for a large public event.",
+      problem:
+        "Pilgrims lacked reliable, centralized information for special buses and travel during Medaram Jathara.",
+      action:
+        "Built an Android app integrating transport data, navigation, and emergency contacts using cloud-backed services.",
+      result:
+        "Enabled real-time access to transport information for thousands of users during the event.",
+      date: "Jan 2022 – Feb 2022",
+      image: "tsrtc_logo.webp",
+      link: "https://play.google.com/store/apps/details?id=com.rtc.medaram",
+      signals: ["Government Deployment", "High Traffic", "Public Utility"],
+      builtWith: ["Java", "Firebase", "MySQL", "Google Cloud"],
+    },
+    {
+      title: "FeedbackFlow",
+      oneLiner:
+        "Web platform enabling teams to collect and embed user feedback with minimal setup.",
+      problem:
+        "Teams needed a lightweight way to collect structured feedback without building custom forms.",
+      action:
+        "Built a full-stack web app with embeddable widgets and backend APIs for feedback collection.",
+      result: "Reduced feedback collection setup time from hours to minutes.",
+      date: "Sep 2024 – Present",
       image: "feedback_flow_logo.png",
-      builtWith: [
-        "React.js",
-        "Node.js",
-        "MongoDB",
-        "Tilwind CSS",
-        "JavaScript",
-      ],
-      category: "Web App",
-    },
-    {
-      title: "ShortLnk",
-      description:
-        "The Web App which enables users to collect feedback from a forms and the feedback collection widget is easy to embed to their landing website.",
-      date: "Aug 2024 - Sep 2024",
-      image: "shortLnk.svg",
-      builtWith: [
-        "React.js",
-        "Node.js",
-        "MongoDB",
-        "Tilwind CSS",
-        "JavaScript",
-      ],
-      category: "Web App",
+      signals: ["Full-stack System", "Embeddable Widget"],
+      builtWith: ["React.js", "Node.js", "MongoDB"],
     },
   ];
-
-  const filteredProjects = projects.filter(
-    (project) => project.category === selectedCategory
-  );
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
 
   return (
     <div className="px-4 md:px-6 lg:px-10">
@@ -90,36 +59,14 @@ export default function Projects() {
         </h1>
       </div>
 
-      <div className="flex gap-4 mt-8">
-        <button
-          className={`px-4 py-2 rounded-full ${
-            selectedCategory === "Mobile App"
-              ? "bg-green-600 text-white"
-              : "bg-neutral-700 text-gray-400"
-          }`}
-          onClick={() => handleCategoryChange("Mobile App")}
-        >
-          Mobile App
-        </button>
-        <button
-          className={`px-4 py-2 rounded-full ${
-            selectedCategory === "Web App"
-              ? "bg-green-600 text-white"
-              : "bg-neutral-700 text-gray-400"
-          }`}
-          onClick={() => handleCategoryChange("Web App")}
-        >
-          Web App
-        </button>
-      </div>
-
       <div className="flex flex-col gap-3 mt-5">
-        {filteredProjects.map((project, index) => (
+        {featuredProjects.map((project, index) => (
           <a
             key={index}
             aria-label={project.title}
             target="_blank"
             href={project.link}
+            rel="noreferrer"
             className="p-4 md:p-6 rounded-lg hover:bg-neutral-800 transition duration-300 ease-in-out"
             onClick={() => handleTabClick(project.title)}
           >
@@ -127,7 +74,7 @@ export default function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="rounded-lg bg-white w-full md:w-[125px] h-auto object-contain"
+                className="rounded-lg bg-white w-full md:w-[140px] object-contain"
               />
 
               <div className="flex flex-col w-full">
@@ -140,16 +87,51 @@ export default function Projects() {
                     &rarr;
                   </span>
                 </div>
-                <p className="text-gray-400 text-sm my-3">{project.date}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.builtWith.map((tech, idx) => (
+
+                <div className="flex flex-col gap-2">
+                  <p className="text-gray-300 text-sm">
+                    <span className="font-semibold text-white">Impact:</span>{" "}
+                    {project.oneLiner}
+                  </p>
+
+                  <p className="text-gray-400 text-sm">
+                    <span className="font-semibold text-gray-300">
+                      Problem:
+                    </span>{" "}
+                    {project.problem}
+                  </p>
+
+                  <p className="text-gray-400 text-sm">
+                    <span className="font-semibold text-gray-300">Result:</span>{" "}
+                    {project.result}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {project.signals?.map((signal, idx) => (
+                    <span
+                      key={idx}
+                      className="rounded-full bg-green-500/15 px-3 py-1 text-xs font-medium text-green-400"
+                    >
+                      {signal}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {project.builtWith.slice(0, 4).map((tech, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300"
+                      className="rounded-full bg-teal-400/10 px-3 py-1 text-xs text-teal-300"
                     >
                       {tech}
                     </div>
                   ))}
+                  {project.builtWith.length > 4 && (
+                    <span className="text-xs text-teal-300">
+                      +{project.builtWith.length - 4} more
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

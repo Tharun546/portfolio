@@ -11,41 +11,44 @@ const Tools = () => {
       </div>
       <div className="flex flex-col gap-3 mt-5">
         <div className="p-6 rounded-lg hover:bg-neutral-800 transition duration-300 ease-in-out">
-          <h2 className="text-2xl font-bold text-white mb-4 flex justify-between items-center">
-            Languages:
+          <h2 className="text-xl font-bold text-white mb-3">
+            Programming Languages
           </h2>
-          <div className="text-gray-400 text-sm mt-2">
-            <p>JavaScript, HTML 5, CSS 3, SASS, LESS, Node.js, TypeScript,</p>
-            <p>
-              FlowTools/Systems: Github, Gitlab, Bitbucket, Docker, NPM, Yarn,
-              Heroku, GIt and more
-            </p>
-          </div>
-        </div>
-
-        <div
-          className={`p-6 rounded-lg ${"hover:bg-neutral-800 transition duration-300 ease-in-out"}`}
-        >
-          <h2 className="text-2xl font-bold text-white mb-4 flex justify-between items-center">
-            Technologies:
-          </h2>
-          <p className="text-gray-400 text-sm mt-2">
-            Express.js, React.js, Vue.js, React Native, Expo, Redux, Webpack,
-            GraphQL, Rollup, Grunt, Gulp
+          <p className="text-gray-400 text-sm">
+            JavaScript (ES6+), TypeScript, Java, HTML5, CSS3
           </p>
         </div>
 
         <div
           className={`p-6 rounded-lg ${"hover:bg-neutral-800 transition duration-300 ease-in-out"}`}
         >
-          <h2 className="text-2xl font-bold text-white mb-4 flex justify-between items-center">
-            Others:
+          <h2 className="text-xl font-bold text-white mb-4 flex justify-between items-center">
+            Frameworks & Platforms
           </h2>
-          <p className="text-gray-400 text-sm mt-2">
-            UI/UX Design, Testing, Leadership, Communication, Team Integration,
-            Empathy, Collaboration, Open-mindedness, Critical Thinking,
-            Professionalism, Problem Solving, Adaptability, Accountability,
-            Approachability and many more
+          <p className="text-gray-400 text-sm">
+            React.js, React Native, Expo, Node.js, Express.js
+          </p>
+        </div>
+
+        <div
+          className={`p-6 rounded-lg ${"hover:bg-neutral-800 transition duration-300 ease-in-out"}`}
+        >
+          <h2 className="text-xl font-bold text-white mb-3">
+            Databases & Cloud
+          </h2>
+          <p className="text-gray-400 text-sm">
+            Firebase, MongoDB, MySQL, Google Cloud, AWS
+          </p>
+        </div>
+
+        <div
+          className={`p-6 rounded-lg ${"hover:bg-neutral-800 transition duration-300 ease-in-out"}`}
+        >
+          <h2 className="text-xl font-bold text-white mb-3">
+            Developer Tooling
+          </h2>
+          <p className="text-gray-400 text-sm">
+            Git, GitHub, Docker, NPM, Yarn, Postman
           </p>
         </div>
       </div>

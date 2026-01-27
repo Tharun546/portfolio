@@ -2,68 +2,65 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div className="flex flex-col justify-between pb-5 ">
+    <div className="lg:sticky lg:top-24">
       <div className="flex-grow bg-white p-6 rounded-xl shadow-lg text-center mx-10 md:mx-8">
-        <div className="relative bg-neutral-400 rounded-full">
-          <img
-            src="myself.png"
-            alt="Mark Smith"
-            className="rounded-lg mx-auto w-full max-w-xs"
-          />
+        <div className="flex flex-col items-center text-center gap-4">
+          <div className="relative w-64 h-64 bg-neutral-400 rounded-full">
+            <img
+              src="tharun.png"
+              alt="Tharun Pasupuleti"
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-black">Tharun Pasupuleti</h2>
+            <p className="text-sm text-gray-600">
+              Software Development Engineer (SDE)
+            </p>
+            <p className="text-xs text-gray-600 mt-1">
+              Production-grade web & mobile systems
+            </p>
+          </div>
+
+          <p className="text-sm text-gray-700 max-w-xs mt-2">
+            Software Development Engineer with hands-on experience building,
+            deploying, and maintaining real-world web and mobile applications.
+            Focused on reliability, performance, and clean architecture.
+          </p>
+
+          <div className="flex gap-4 mt-4">
+            <a
+              href="https://rebrand.ly/adpth"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="text-neutral-400 hover:text-gray-700"
+            >
+              <i className="fab fa-github fa-lg"></i>
+            </a>
+
+            <a
+              href="https://rebrand.ly/linkedinLnk"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="text-neutral-400 hover:text-gray-700"
+            >
+              <i className="fab fa-linkedin fa-lg"></i>
+            </a>
+
+            <a
+              href="/portfolio/resume.pdf?utm_source=portfolio&utm_medium=projects_section&utm_campaign=sde_job_search"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Resume"
+              className="text-neutral-400 hover:text-gray-700"
+            >
+              <i className="fas fa-file-alt fa-lg"></i>
+            </a>
+          </div>
         </div>
-        <h2 className="text-2xl sm:text-3xl mt-4 font-bold text-black">
-          Tharun Pasupuleti
-        </h2>
-        <div className="text-sm text-gray-600">
-          <p>Fullstack, Mobile App Developer &</p>
-          <p>content creator</p>
-        </div>
-        <p className="text-gray-700 my-6">
-          I'm currently working with my hands to make magic happen on the web.
-        </p>
-        <div className="mt-4 flex gap-4 justify-center ">
-          <a
-            href="https://bit.ly/instagram-lnk"
-            className="text-gray-600 hover:text-orange-500"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-instagram fa-2xl"></i>
-          </a>
-          <a
-            href="https://bit.ly/github-lnk"
-            className="text-gray-600 hover:text-orange-500"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-github fa-2xl"></i>
-          </a>
-          <a
-            href="https://bit.ly/linkedin-lnk"
-            className="text-gray-600 hover:text-orange-500"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-linkedin fa-2xl"></i>
-          </a>
-        </div>
-      </div>
-      <div className="mt-4 flex justify-center">
-        <a
-          href="/portfolio/TharunResume.pdf"
-          target="_blank"
-          className="flex gap-2 items-center bg-white bg-opacity-20 backdrop-blur-lg text-white border border-white border-opacity-25 py-2 px-8 rounded-full text-xl transition-all hover:bg-opacity-30 hover:shadow-lg"
-        >
-          Get My Resume
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 -960 960 960"
-            fill="#01e41c"
-            className="w-10 h-10"
-          >
-            <path d="m356-300 204-204v90h80v-226H414v80h89L300-357l56 57ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z" />
-          </svg>
-        </a>
       </div>
     </div>
   );

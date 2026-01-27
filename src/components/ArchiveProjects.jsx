@@ -2,28 +2,6 @@ import React from "react";
 
 const projects = [
   {
-    year: 2023,
-    project: {
-      name: "TSRTC Medaram Jathara",
-      link: "https://play.google.com/store/apps/details?id=com.rtc.medaram",
-      shortName: "TSRTC Medaram Jathara",
-    },
-    madeAt: "TSRTC",
-    builtWith: ["Java", "Php", "Firebase", "Mysql", "Google Cloud"],
-    link: "https://bit.ly/tsrtc-applink",
-  },
-  {
-    year: 2023,
-    project: {
-      name: "Wevento",
-      link: "",
-      shortName: "Wevento",
-    },
-    madeAt: "",
-    builtWith: ["Kotlin", "Firebase", "Php", "Mysql"],
-    link: "",
-  },
-  {
     year: 2024,
     project: {
       name: "Fudoo",
@@ -31,6 +9,7 @@ const projects = [
       shortName: "Fudoo",
     },
     madeAt: "Fudoo",
+    signal: "Production • Real-time • Multi-vendor",
     builtWith: [
       "React Native",
       "Expo",
@@ -42,6 +21,18 @@ const projects = [
     link: "https://www.fudoo.in/",
   },
   {
+    year: 2023,
+    project: {
+      name: "TSRTC Medaram Jathara",
+      link: "https://play.google.com/store/apps/details?id=com.rtc.medaram",
+      shortName: "TSRTC Medaram Jathara",
+    },
+    madeAt: "TSRTC",
+    signal: "Government-backed • High-traffic",
+    builtWith: ["Java", "Php", "Firebase", "Mysql", "Google Cloud"],
+    link: "https://bit.ly/tsrtc-applink",
+  },
+  {
     year: 2024,
     project: {
       name: "FeedbackFlow",
@@ -49,7 +40,20 @@ const projects = [
       shortName: "FeedbackFlow",
     },
     madeAt: "",
+    signal: "Full-stack • SaaS-style system",
     builtWith: ["React.js", "Node.js", "MongoDB", "Tilwind CSS", "JavaScript"],
+    link: "",
+  },
+  {
+    year: 2023,
+    project: {
+      name: "Wevento",
+      link: "",
+      shortName: "Wevento",
+    },
+    madeAt: "",
+    signal: "Location-based mobile app",
+    builtWith: ["Kotlin", "Firebase", "Php", "Mysql"],
     link: "",
   },
   {
@@ -60,19 +64,9 @@ const projects = [
       shortName: "Covid 19 Tracker",
     },
     madeAt: "",
+    signal: "Learning project • API integration",
     builtWith: ["Java", "rapid-api"],
     link: "https://github.com/adpth/COVID-19",
-  },
-  {
-    year: 2024,
-    project: {
-      name: "Farm Fusion",
-      link: "",
-      shortName: "Farm Fusion",
-    },
-    madeAt: "",
-    builtWith: ["Kotlin", "AWS", "Firebase"],
-    link: "",
   },
 ];
 
@@ -113,7 +107,7 @@ export default function ArchiveProjects() {
                   Project
                 </th>
                 <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">
-                  Made for
+                  Signal
                 </th>
                 <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">
                   Built with
@@ -160,7 +154,7 @@ export default function ArchiveProjects() {
                   </td>
                   <td className="hidden py-4 pr-4 text-sm lg:table-cell">
                     <div className="translate-y-px whitespace-nowrap">
-                      {project.madeAt}
+                      {project.signal}
                     </div>
                   </td>
                   <td className="hidden py-4 pr-4 lg:table-cell">
