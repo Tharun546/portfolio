@@ -51,7 +51,7 @@ const AboutSection = () => {
             </a>
 
             <a
-              href="/portfolio/resume.pdf?utm_source=portfolio&utm_medium=projects_section&utm_campaign=sde_job_search"
+              href="/portfolio/resume.pdf"
               target="_blank"
               rel="noreferrer"
               aria-label="Resume"
