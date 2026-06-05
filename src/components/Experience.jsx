@@ -3,11 +3,25 @@ import React from "react";
 export default function Experience() {
   const experiences = [
     {
+      title: "Purdue University Northwest",
+      description:
+        "Graduate Research Assistant. Designed and built the Aerospace/X3D educational platform independently. Created frontend architecture, implemented responsive learning experiences, integrated X3D and X3DOM workflows, and developed reusable educational components. Worked directly with faculty and delivered deployment-ready software.",
+      date: "Aug 2024 - May 2026",
+      link: "https://www.pnw.edu/",
+    },
+    {
       title: "Accenture",
       description:
-        "Worked as an Associate Software Engineer on production web applications, contributing to feature development, bug fixes, and performance improvements in a team-based environment. Collaborated with cross-functional teams to implement backend APIs and frontend components following enterprise engineering standards.",
+        "Associate Software Engineer. Developed React and Node.js enterprise applications. Reduced UI latency by 20% and API response times by 30%. Worked within Agile teams, participated in CI/CD deployment workflows, and resolved production issues.",
       date: "Feb 2024 - Aug 2024",
       link: "https://www.accenture.com/",
+    },
+    {
+      title: "Computer Science Engineering Association (CSEA)",
+      description:
+        "President. Led initiatives serving 200+ students, organised technical workshops, coordinated coding competitions, managed student teams, and facilitated industry speaker sessions.",
+      date: "Aug 2021 - May 2024",
+      link: "#",
     },
   ];
 

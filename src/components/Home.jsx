@@ -33,23 +33,17 @@ const Home = () => {
       <div className="px-6 md:px-10 mb-24">
         <div className="flex flex-col gap-4 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl lg:text-7xl sm:mt-10 font-black">
-            SOFTWARE{" "}
-            <span className="text-neutral-700">DEVELOPMENT ENGINEER</span>
+            FULL STACK{" "}
+            <span className="text-neutral-700">ENGINEER</span>
           </h1>
-          <p className="text-neutral-400 text-base md:text-lg text-start">
-            I’m a Software Development Engineer with hands-on experience
-            building and shipping{" "}
-            <span className="text-white">
-              production-grade web and mobile applications.{" "}
-            </span>
-            I’ve worked across the stack - from frontend interfaces to backend
-            APIs and cloud deployments - focusing on reliability, performance,
-            and real-world usability.
+          <p className="text-neutral-400 text-base md:text-lg text-start mt-2 font-medium">
+            AI-Powered Applications • SaaS Products • Interactive Learning Platforms
           </p>
-          <p className="text-neutral-400 text-base md:text-lg text-start">
-            I’ve contributed to and led projects used by real users, including
-            public-facing and government-backed systems, and I enjoy taking
-            ownership from problem definition to deployment.
+          <p className="text-neutral-400 text-base md:text-lg text-start mt-4">
+            I’m a Full Stack Engineer and recent MS Computer Science graduate from Purdue University Northwest with experience spanning enterprise software, AI-powered applications, educational technology, and mobile development.
+          </p>
+          <p className="text-neutral-400 text-base md:text-lg text-start mt-2">
+            My background combines enterprise engineering at Accenture, research-driven web development at Purdue University Northwest, open-source educational platforms, AI-powered SaaS products, and mobile applications published to production.
           </p>
         </div>
         <div className="flex flex-wrap gap-6 my-10 justify-center md:justify-start">

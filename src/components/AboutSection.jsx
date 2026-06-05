@@ -16,17 +16,15 @@ const AboutSection = () => {
           <div>
             <h2 className="text-xl font-bold text-black">Tharun Pasupuleti</h2>
             <p className="text-sm text-gray-600">
-              Software Development Engineer (SDE)
+              Full Stack Engineer
             </p>
             <p className="text-xs text-gray-600 mt-1">
-              Production-grade web & mobile systems
+              AI-Powered Applications • SaaS Products • Interactive Learning Platforms
             </p>
           </div>
 
           <p className="text-sm text-gray-700 max-w-xs mt-2">
-            Software Development Engineer with hands-on experience building,
-            deploying, and maintaining real-world web and mobile applications.
-            Focused on reliability, performance, and clean architecture.
+            Full Stack Engineer who has built enterprise software, AI-powered products, production mobile applications, educational platforms, and browser-based 3D experiences.
           </p>
 
           <div className="flex gap-4 mt-4">
@@ -50,15 +48,6 @@ const AboutSection = () => {
               <i className="fab fa-linkedin fa-lg"></i>
             </a>
 
-            <a
-              href="/portfolio/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Resume"
-              className="text-neutral-400 hover:text-gray-700"
-            >
-              <i className="fas fa-file-alt fa-lg"></i>
-            </a>
           </div>
         </div>
       </div>
