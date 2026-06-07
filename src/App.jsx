@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
@@ -7,10 +7,11 @@ import ArchiveLayout from "./components/ArchiveLayout";
 import MainLayout from "./components/MainLayout";
 import Achievements from "./components/Achievements";
 import ArchiveProjects from "./components/ArchiveProjects";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="/" element={<Home />} />
@@ -23,6 +24,8 @@ function App() {
           <Route path="/archive/projects" element={<ArchiveProjects />} />
           <Route path="/archive/achievements" element={<Achievements />} />
         </Route>
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

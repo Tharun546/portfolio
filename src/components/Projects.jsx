@@ -14,7 +14,7 @@ export default function Projects() {
         "Built a full-stack AI platform integrating calendar workflows and dynamic scheduling using LLMs.",
       result:
         "Production-ready system demonstrating modern AI architecture and productivity optimization.",
-      date: "Apr 2026 - Present",
+      date: "Apr 2026 - May 2026",
       image: "taskpilot_thumbnail.png",
       link: "https://github.com/adpth/TaskPilot-AI",
       signals: ["AI SaaS Platform", "Production-ready"],
