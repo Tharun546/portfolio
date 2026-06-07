@@ -21,7 +21,7 @@ export default function Experience() {
       description:
         "President. Led initiatives serving 200+ students, organised technical workshops, coordinated coding competitions, managed student teams, and facilitated industry speaker sessions.",
       date: "Aug 2021 - May 2024",
-      link: "#",
+      link: "",
     },
   ];
 
@@ -37,9 +37,16 @@ export default function Experience() {
           <a
             key={index}
             aria-label={experience.title}
-            target="_blank"
-            href={experience.link}
-            className="p-4 md:p-6 rounded-lg hover:bg-neutral-800 transition duration-300 ease-in-out"
+            target={experience.link ? "_blank" : undefined}
+            href={experience.link || undefined}
+            className={`p-4 md:p-6 rounded-lg transition duration-300 ease-in-out hover:bg-neutral-800 ${
+              experience.link ? "cursor-pointer" : "cursor-default"
+            }`}
+            onClick={(e) => {
+              if (!experience.link) {
+                e.preventDefault();
+              }
+            }}
           >
             <h2 className="text-xl md:text-2xl font-bold text-white mb-4 flex justify-between items-center">
               {experience.title}

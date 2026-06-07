@@ -5,30 +5,13 @@ import React, { useEffect, useRef, useState } from "react";
 export const Timeline = ({ data }) => {
   const ref = useRef(null);
   const containerRef = useRef(null);
-  const [height, setHeight] = useState(0);
-
-  useEffect(() => {
-    const updateHeight = () => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect();
-        setHeight(rect.height);
-      }
-    };
-
-    updateHeight();
-    window.addEventListener("resize", updateHeight); // Update on resize
-
-    return () => {
-      window.removeEventListener("resize", updateHeight);
-    };
-  }, [ref]);
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: ref,
     offset: ["start 10%", "end 50%"],
   });
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
+  const heightTransform = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
@@ -66,17 +49,14 @@ export const Timeline = ({ data }) => {
           </div>
         ))}
         <div
-          style={{
-            height: height + "px",
-          }}
-          className="absolute md:left-8 left-8 top-0 w-1 bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent via-neutral-200 dark:via-neutral-700 to-transparent [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="absolute md:left-8 left-8 top-0 bottom-0 w-1 bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent via-neutral-200 dark:via-neutral-700 to-transparent [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-1 bg-gradient-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
+            className="absolute inset-x-0 top-0 w-1 bg-gradient-to-b from-purple-500 via-blue-500 to-transparent rounded-full"
           />
         </div>
       </div>

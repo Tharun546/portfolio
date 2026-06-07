@@ -13,50 +13,6 @@ const projects = [
     link: "https://github.com/adpth/TaskPilot-AI",
   },
   {
-    year: "2025",
-    project: {
-      name: "X3D-VR for Engineering & Aerospace",
-      link: "https://xreal-xperienz.org/x3d/beta/index.html",
-      shortName: "X3D-VR",
-    },
-    signal: "Educational Technology • Live",
-    builtWith: ["X3D", "X3DOM", "GLB", "React"],
-    link: "https://xreal-xperienz.org/x3d/beta/index.html",
-  },
-  {
-    year: "2023",
-    project: {
-      name: "Fudoo",
-      link: "https://play.google.com/store/apps/details?id=com.kitsw.canteen",
-      shortName: "Fudoo",
-    },
-    signal: "Production • Real-time • Multi-vendor",
-    builtWith: ["React Native", "Firebase", "Node.js", "AWS"],
-    link: "https://www.fudoo.in/",
-  },
-  {
-    year: "2024",
-    project: {
-      name: "FeedbackFlow",
-      link: "#",
-      shortName: "FeedbackFlow",
-    },
-    signal: "Full-stack • SaaS-style system",
-    builtWith: ["React.js", "Node.js", "MongoDB"],
-    link: "#",
-  },
-  {
-    year: "2022",
-    project: {
-      name: "TSRTC Medaram Jathara",
-      link: "https://play.google.com/store/apps/details?id=com.rtc.medaram",
-      shortName: "TSRTC Medaram Jathara",
-    },
-    signal: "Government-backed • High-traffic",
-    builtWith: ["Java", "Firebase", "MySQL", "Google Cloud"],
-    link: "https://rebrand.ly/fphf08l",
-  },
-  {
     year: "2026",
     project: {
       name: "AI Sales Outreach Assistant",
@@ -79,18 +35,73 @@ const projects = [
     link: "#",
   },
   {
-    year: 2023,
+    year: "2025",
+    project: {
+      name: "X3D-VR for Engineering & Aerospace",
+      link: "https://xreal-xperienz.org/x3d/beta/index.html",
+      shortName: "X3D-VR",
+    },
+    signal: "Educational Technology • Live",
+    builtWith: ["X3D", "X3DOM", "GLB", "React"],
+    link: "https://xreal-xperienz.org/x3d/beta/index.html",
+  },
+  {
+    year: "2024",
+    project: {
+      name: "FeedbackFlow",
+      link: "#",
+      shortName: "FeedbackFlow",
+    },
+    signal: "Full-stack • SaaS-style system",
+    builtWith: ["React.js", "Node.js", "MongoDB"],
+    link: "#",
+  },
+  {
+    year: "2024",
+    project: {
+      name: "ShortLnk",
+      link: "https://github.com/adpth/ShortLnk",
+      shortName: "ShortLnk",
+    },
+    signal: "Working - Production-ready",
+    builtWith: ["Node.js", "MongoDB", "React.js", "Express.js"],
+    link: "https://github.com/adpth/ShortLnk",
+  },
+  {
+    year: "2023",
+    project: {
+      name: "Fudoo",
+      link: "https://play.google.com/store/apps/details?id=com.kitsw.canteen",
+      shortName: "Fudoo",
+    },
+    signal: "Production • Real-time • Multi-vendor",
+    builtWith: ["React Native", "Firebase", "Node.js", "AWS"],
+    link: "https://www.fudoo.in/",
+  },
+  {
+    year: "2023",
     project: {
       name: "Wevento",
       link: "",
       shortName: "Wevento",
     },
-    signal: "Location-based mobile app",
+    signal: "Location - Events based mobile app",
     builtWith: ["Kotlin", "Firebase", "Php", "Mysql"],
     link: "",
   },
   {
-    year: 2020,
+    year: "2022",
+    project: {
+      name: "TSRTC Medaram Jathara",
+      link: "https://play.google.com/store/apps/details?id=com.rtc.medaram",
+      shortName: "TSRTC Medaram Jathara",
+    },
+    signal: "Government-backed • High-traffic",
+    builtWith: ["Java", "Firebase", "MySQL", "Google Cloud"],
+    link: "https://rebrand.ly/fphf08l",
+  },
+  {
+    year: "2020",
     project: {
       name: "Corona Case Tracker",
       link: "https://github.com/adpth/COVID-19",
@@ -101,6 +112,7 @@ const projects = [
     link: "https://github.com/adpth/COVID-19",
   },
 ];
+
 
 const ProjectRow = ({ project }) => {
   return (

@@ -6,22 +6,38 @@ export default function Projects() {
   const featuredProjects = [
     {
       title: "TaskPilot AI",
-      oneLiner: "AI SaaS Platform for dynamic scheduling and task decomposition.",
-      problem: "Users needed intelligent scheduling to manage cognitive workloads effectively.",
-      action: "Built a full-stack AI platform integrating calendar workflows and dynamic scheduling using LLMs.",
-      result: "Production-ready system demonstrating modern AI architecture and productivity optimization.",
+      oneLiner:
+        "AI SaaS Platform for dynamic scheduling and task decomposition.",
+      problem:
+        "Users needed intelligent scheduling to manage cognitive workloads effectively.",
+      action:
+        "Built a full-stack AI platform integrating calendar workflows and dynamic scheduling using LLMs.",
+      result:
+        "Production-ready system demonstrating modern AI architecture and productivity optimization.",
       date: "Apr 2026 - Present",
       image: "taskpilot_thumbnail.png",
-      link: "#",
+      link: "https://github.com/adpth/TaskPilot-AI",
       signals: ["AI SaaS Platform", "Production-ready"],
-      builtWith: ["Next.js", "React 19", "FastAPI", "PostgreSQL", "Supabase", "Gemini AI", "TypeScript"],
+      builtWith: [
+        "Next.js",
+        "React 19",
+        "FastAPI",
+        "PostgreSQL",
+        "Supabase",
+        "Gemini AI",
+        "TypeScript",
+      ],
     },
     {
       title: "X3D-VR for Engineering & Aerospace",
-      oneLiner: "Browser-based 3D educational platform for engineering students.",
-      problem: "Lack of accessible, interactive 3D visualizations for complex aerospace engineering concepts.",
-      action: "Developed a responsive platform integrating X3D, X3DOM, and GLB for interactive learning modules.",
-      result: "Live educational platform directly supporting university engineering curricula.",
+      oneLiner:
+        "Browser-based 3D educational platform for engineering students.",
+      problem:
+        "Lack of accessible, interactive 3D visualizations for complex aerospace engineering concepts.",
+      action:
+        "Developed a responsive platform integrating X3D, X3DOM, and GLB for interactive learning modules.",
+      result:
+        "Live educational platform directly supporting university engineering curricula.",
       date: "Oct 2025 - Jan 2026",
       image: "aerospace_thumbnail_final.png",
       link: "https://xreal-xperienz.org/x3d/beta/index.html",
@@ -30,10 +46,14 @@ export default function Projects() {
     },
     {
       title: "Fudoo",
-      oneLiner: "Built a real-time, multi-vendor food ordering mobile application used in production.",
-      problem: "Local food vendors lacked a centralized platform for digital menu management and real-time ordering.",
-      action: "Designed and built a React Native app with Firebase real-time sync and Node.js backend deployed on AWS.",
-      result: "Released on Play Store, reducing order update latency by ~30% and enabling multiple vendors to onboard digitally.",
+      oneLiner:
+        "Built a real-time, multi-vendor food ordering mobile application used in production.",
+      problem:
+        "Local food vendors lacked a centralized platform for digital menu management and real-time ordering.",
+      action:
+        "Designed and built a React Native app with Firebase real-time sync and Node.js backend deployed on AWS.",
+      result:
+        "Released on Play Store, reducing order update latency by ~30% and enabling multiple vendors to onboard digitally.",
       date: "Jun 2023 – Aug 2024",
       image: "fudoo_thumbnail.png",
       link: "https://play.google.com/store/apps/details?id=com.kitsw.canteen",
@@ -42,25 +62,37 @@ export default function Projects() {
     },
     {
       title: "TSRTC Medaram Jathara",
-      oneLiner: "Government-backed mobile app providing transport and navigation info for a large public event.",
-      problem: "Pilgrims lacked reliable, centralized information for special buses and travel during Medaram Jathara.",
-      action: "Built an Android app integrating transport data, navigation, and emergency contacts using cloud-backed services.",
-      result: "Enabled real-time access to transport information for thousands of users during the event.",
+      oneLiner:
+        "Government-backed mobile app providing transport and navigation info for a large public event.",
+      problem:
+        "Pilgrims lacked reliable, centralized information for special buses and travel during Medaram Jathara.",
+      action:
+        "Built an Android app integrating transport data, navigation, and emergency contacts using cloud-backed services.",
+      result:
+        "Enabled real-time access to transport information for thousands of users during the event.",
       date: "Jan 2022 – Feb 2022",
       image: "tsrtc_logo.webp",
       link: "https://rebrand.ly/fphf08l",
-      signals: ["Government Collaboration", "Public Utility", "Production Deployment"],
+      signals: [
+        "Government Collaboration",
+        "Public Utility",
+        "Production Deployment",
+      ],
       builtWith: ["Java", "Firebase", "MySQL", "Google Cloud"],
     },
     {
       title: "FeedbackFlow",
-      oneLiner: "Web platform enabling teams to collect and embed user feedback with minimal setup.",
-      problem: "Teams needed a lightweight way to collect structured feedback without building custom forms.",
-      action: "Built a full-stack web app with embeddable widgets and backend APIs for feedback collection.",
-      result: "Customer feedback management system. Reduced feedback collection setup time from hours to minutes.",
+      oneLiner:
+        "Web platform enabling teams to collect and embed user feedback with minimal setup.",
+      problem:
+        "Teams needed a lightweight way to collect structured feedback without building custom forms.",
+      action:
+        "Built a full-stack web app with embeddable widgets and backend APIs for feedback collection.",
+      result:
+        "Customer feedback management system. Reduced feedback collection setup time from hours to minutes.",
       date: "Sep 2024 – Dec 2024",
       image: "feedback_flow_logo.png",
-      link: "#",
+      link: "",
       signals: ["SaaS Platform", "Needs GitHub Publication"],
       builtWith: ["React.js", "Node.js", "MongoDB"],
     },
@@ -79,11 +111,17 @@ export default function Projects() {
           <a
             key={index}
             aria-label={project.title}
-            target="_blank"
-            href={project.link}
-            rel="noreferrer"
-            className="p-4 md:p-6 rounded-lg hover:bg-neutral-800 transition duration-300 ease-in-out"
-            onClick={() => handleTabClick(project.title)}
+            target={project.link ? "_blank" : undefined}
+            href={project.link || undefined}
+            rel={project.link ? "noreferrer" : undefined}
+            className={`p-4 md:p-6 rounded-lg transition duration-300 ease-in-out hover:bg-neutral-800 ${
+              project.link ? "cursor-pointer" : "cursor-default"
+            }`}
+            onClick={(e) => {
+              if (!project.link) {
+                e.preventDefault();
+              }
+            }}
           >
             <div className="flex flex-col md:flex-row md:items-center gap-4">
               <img
@@ -172,36 +210,58 @@ export default function Projects() {
           {
             title: "AI Sales Outreach Assistant",
             oneLiner: "Automated lead research and outreach workflows.",
-            problem: "Sales teams spend too much time manually researching leads and drafting emails.",
-            action: "Building an automated workflow for lead generation and personalized outreach using LLMs.",
+            problem:
+              "Sales teams spend too much time manually researching leads and drafting emails.",
+            action:
+              "Building an automated workflow for lead generation and personalized outreach using LLMs.",
             result: "Currently in development.",
             date: "In Progress",
             icon: <Bot className="h-10 w-10 text-amber-400" />,
-            link: "#",
+            link: "",
             signals: ["AI Agent", "Workflow Automation"],
             builtWith: ["Node.js", "Python", "LLMs"],
           },
-          
+
           {
             title: "LLM-Powered Data Analyst",
             oneLiner: "AI-powered data analysis platform.",
-            problem: "Data analysis requires complex queries and manual data manipulation.",
-            action: "Building an AI assistant to analyze data, run queries, and generate reports.",
+            problem:
+              "Data analysis requires complex queries and manual data manipulation.",
+            action:
+              "Building an AI assistant to analyze data, run queries, and generate reports.",
             result: "Currently in development.",
             date: "In Progress",
             icon: <BarChart3 className="h-10 w-10 text-teal-400" />,
-            link: "#",
-            signals: ["AI Engineering", "Microservices", "Data Analysis Workflows"],
-            builtWith: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "Pandas", "OpenAI"],
+            link: "",
+            signals: [
+              "AI Engineering",
+              "Microservices",
+              "Data Analysis Workflows",
+            ],
+            builtWith: [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "Python",
+              "FastAPI",
+              "Pandas",
+              "OpenAI",
+            ],
           },
         ].map((project, index) => (
           <a
             key={index}
             aria-label={project.title}
-            target="_blank"
-            href={project.link}
-            rel="noreferrer"
-            className="p-4 md:p-6 rounded-lg hover:bg-neutral-800 transition duration-300 ease-in-out"
+            target={project.link ? "_blank" : undefined}
+            href={project.link || undefined}
+            className={`p-4 md:p-6 rounded-lg transition duration-300 ease-in-out hover:bg-neutral-800 ${
+              project.link ? "cursor-pointer" : "cursor-default"
+            }`}
+            onClick={(e) => {
+              if (!project.link) {
+                e.preventDefault();
+              }
+            }}
           >
             <div className="flex flex-col md:flex-row md:items-center gap-4">
               {project.icon ? (

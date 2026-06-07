@@ -5,143 +5,108 @@ import { Timeline } from "./timeline";
 const Achievements = () => {
   const data = [
     {
+      title: "2026",
+      content: (
+        <div>
+          <h4 className="text-white text-base md:text-lg font-bold mb-2">
+            M.S. in Computer Science — Purdue University Northwest (PNW)
+          </h4>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-6">
+            Aug 18, 2024 — May 2026. Specialized in advanced software engineering, AI/ML systems, and interactive 3D visualizations. During my master's, I independently designed and launched FeedbackFlow and ShortLnk (MERN-based SaaS tools).
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="https://applymarket.com/wp-content/uploads/2024/11/Purdue-University-Northwest-3.jpg"
+              alt="Purdue University Northwest"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06)]"
+            />
+            <img
+              src={import.meta.env.BASE_URL + `achievements/tharun_pnw_graduated.png`}
+              alt="Purdue University Northwest"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06)]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
       title: "2024",
       content: (
         <div>
+          <h4 className="text-white text-base md:text-lg font-bold mb-2">
+            Associate Software Engineer — Accenture
+          </h4>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Developed software solutions as an Associate Software Engineer at
-            Accenture, specializing in full-stack development with the MERN
-            stack over a 6-month tenure.
+            Engineered full-stack enterprise solutions at Accenture (Feb 2024 — Aug 2024) using the MERN stack before transitioning to pursue my Master's degree.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://a.mktgcdn.com/p/ay2U5iINUpUf_XFYXetVkdpHkt-tYWAo7yLSK-zrkFo/384x384.jpg"
-              alt="startup template"
+              alt="Accenture"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06)]"
             />
           </div>
         </div>
       ),
     },
-    // {
-    //   title: "Early 2023",
-    //   content: (
-    //     <div>
-    //       <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-    //         I usually run out of copy, but when I see content this big, I try to
-    //         integrate lorem ipsum.
-    //       </p>
-    //       <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-    //         Lorem ipsum is for people who are too lazy to write copy. But we are
-    //         not. Here are some more example of beautiful designs I built.
-    //       </p>
-    //       <div className="grid grid-cols-2 gap-4">
-    //         <img
-    //           src="https://assets.aceternity.com/pro/hero-sections.png"
-    //           alt="hero template"
-    //           width={500}
-    //           height={500}
-    //           className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-    //         />
-    //         <img
-    //           src="https://assets.aceternity.com/features-section.png"
-    //           alt="feature template"
-    //           width={500}
-    //           height={500}
-    //           className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-    //         />
-    //         <img
-    //           src="https://assets.aceternity.com/pro/bento-grids.png"
-    //           alt="bento template"
-    //           width={500}
-    //           height={500}
-    //           className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-    //         />
-    //         <img
-    //           src="https://assets.aceternity.com/cards.png"
-    //           alt="cards template"
-    //           width={500}
-    //           height={500}
-    //           className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-    //         />
-    //       </div>
-    //     </div>
-    //   ),
-    // },
+    {
+      title: "2023",
+      content: (
+        <div>
+          <h4 className="text-white text-base md:text-lg font-bold mb-2">
+            Fudoo — Production Launch
+          </h4>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Co-founded and built Fudoo, a real-time, multi-vendor food ordering app on the Google Play Store. Used React Native, Firebase Realtime Sync, Node.js, and AWS, improving ordering latency by 30%. Also developed Wevento, an event location mobile app.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src={import.meta.env.BASE_URL + "fudoo_thumbnail.png"}
+              alt="Fudoo mobile application"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06)]"
+            />
+          </div>
+        </div>
+      ),
+    },
     {
       title: "2022",
       content: (
         <div>
+          <h4 className="text-white text-base md:text-lg font-bold mb-2">
+            TSRTC Medaram Jathara App
+          </h4>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Awarded for my valuable contribution as Developer in the development
-            of mobile app named "Medaram with TSRTC" in a very short time.
+            Awarded by the government for rapid development and contribution to the "Medaram with TSRTC" navigation and bus tracking mobile app serving thousands of public commuters.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
               src={
                 import.meta.env.BASE_URL +
-                `/achievements/vc_sajjanar_app_annoucement.png`
+                `achievements/vc_sajjanar_app_annoucement.png`
               }
-              alt="hero template"
+              alt="Award ceremony"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06)]"
             />
             <img
               src={
                 import.meta.env.BASE_URL +
-                `/achievements/medaram_team_grp_photo.jpg`
+                `achievements/medaram_team_grp_photo.jpg`
               }
-              alt="feature template"
+              alt="Group photo"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Changelog",
-      content: (
-        <div>
-          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Latest Updates: Deployed multiple projects live, including some
-            projects for startups
-          </p>
-          <div className="mb-8">
-            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm">
-              ✅ Fudoo
-            </div>
-            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm">
-              ✅ Wvento
-            </div>
-            {/* <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm">
-              ✅ Salman Bhai Fan Club registrations open
-            </div> */}
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src={import.meta.env.BASE_URL + `fudoo_thumbnail.png`}
-              alt="Fudoo Thumbnail"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <img
-              src={import.meta.env.BASE_URL + `wvento_thumbnail.png`}
-              alt="Wvento Thumbnail"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06)]"
             />
           </div>
         </div>
