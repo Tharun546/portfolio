@@ -28,9 +28,7 @@ const asset = (path) => import.meta.env.BASE_URL + path;
 const LINKS = {
   github: "https://rebrand.ly/adpth",
   linkedin: "https://rebrand.ly/linkedinLnk",
-  // TODO: point at a hosted resume PDF (e.g. public/resume.pdf → asset("resume.pdf"))
-  resume: "https://rebrand.ly/linkedinLnk",
-  email: "tharun.p147@gmail.com",
+  email: "tharun14714@gmail.com",
 };
 
 const NAV_ITEMS = [
@@ -434,9 +432,6 @@ const MainLayout = () => {
           <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-[#5c5c66] text-xs">
               © {new Date().getFullYear()} Tharun Pasupuleti
-            </p>
-            <p className="text-[#5c5c66] text-xs font-mono">
-              react · tailwind · framer-motion
             </p>
           </div>
         </footer>
