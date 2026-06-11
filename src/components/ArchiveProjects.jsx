@@ -21,7 +21,7 @@ const projects = [
     },
     signal: "Workflow Automation • AI Agent",
     builtWith: ["Node.js", "Python", "LLMs"],
-    link: "https://github.com/adpth/ai-sales-outreach",
+    link: "",
   },
   {
     year: "2026",
@@ -32,7 +32,7 @@ const projects = [
     },
     signal: "AI Engineering • Data Analysis",
     builtWith: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "Pandas", "OpenAI"],
-    link: "https://github.com/adpth/llm-data-analyst",
+    link: "",
   },
   {
     year: "2025",
@@ -54,7 +54,7 @@ const projects = [
     },
     signal: "Full-stack • SaaS-style system",
     builtWith: ["React.js", "Node.js", "MongoDB"],
-    link: "https://github.com/adpth/FeedbackFlow",
+    link: "",
   },
   {
     year: "2024",
@@ -87,7 +87,7 @@ const projects = [
     },
     signal: "Location - Events based mobile app",
     builtWith: ["Kotlin", "Firebase", "PHP", "MySQL"],
-    link: "https://github.com/adpth/Wevento",
+    link: "",
   },
   {
     year: "2022",
