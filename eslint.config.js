@@ -29,6 +29,9 @@ export default [
       ...react.configs["jsx-runtime"].rules,
       ...reactHooks.configs.recommended.rules,
       "react/jsx-no-target-blank": "off",
+      // Plain-JS codebase: PropTypes add noise without type safety; apostrophes in copy are fine.
+      "react/prop-types": "off",
+      "react/no-unescaped-entities": "off",
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },

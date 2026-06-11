@@ -1,29 +1,25 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Compass } from 'lucide-react';
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh] px-4 text-center">
-      <div className="p-5 rounded-full bg-neutral-900 border border-neutral-800 mb-8 shadow-sm">
-        <Compass className="w-12 h-12 text-teal-400 animate-[spin_4s_linear_infinite]" />
+    <div className="flex flex-col items-center justify-center min-h-[100vh] px-4 text-center bg-[#0a0a0a]">
+      <div className="p-5 rounded-full bg-[#111] border border-[#1e1e1e] mb-8">
+        <Compass className="w-12 h-12 text-[#7ab2ff] animate-[spin_4s_linear_infinite]" />
       </div>
-      <h1 className="text-7xl md:text-9xl font-black text-white mb-4 tracking-tighter">
+      <p className="kicker mb-3">404 — not found</p>
+      <h1 className="text-7xl md:text-9xl font-bold text-[#f4f4f5] mb-4 tracking-tighter heading-font">
         404
       </h1>
-      <h2 className="text-2xl md:text-3xl font-bold text-neutral-300 mb-6">
-        Lost in the Code
+      <h2 className="text-2xl md:text-3xl font-bold text-[#a1a1aa] mb-6 heading-font">
+        Lost in the code
       </h2>
-      <p className="text-neutral-400 max-w-md mb-10 text-sm md:text-base">
-        The page you are looking for doesn't exist, has been moved, or is currently under construction. 
-        Let's get you back to familiar territory.
+      <p className="text-[#71717a] max-w-md mb-10 text-sm md:text-base">
+        This page doesn't exist or has been moved. Head back home to find what
+        you're looking for.
       </p>
-      
-      <Link 
-        to="/"
-        className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-neutral-200 transition duration-300 ease-in-out flex items-center gap-2"
-      >
-        Return to Home
+      <Link to="/" className="btn-primary">
+        Return home
       </Link>
     </div>
   );

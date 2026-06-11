@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -16,23 +16,23 @@ const projects = [
     year: "2026",
     project: {
       name: "AI Sales Outreach Assistant",
-      link: "#",
+      link: "https://github.com/adpth/ai-sales-outreach",
       shortName: "AI Sales Assistant",
     },
     signal: "Workflow Automation • AI Agent",
     builtWith: ["Node.js", "Python", "LLMs"],
-    link: "#",
+    link: "https://github.com/adpth/ai-sales-outreach",
   },
   {
     year: "2026",
     project: {
       name: "LLM-Powered Data Analyst",
-      link: "#",
+      link: "https://github.com/adpth/llm-data-analyst",
       shortName: "LLM Data Analyst",
     },
     signal: "AI Engineering • Data Analysis",
     builtWith: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "Pandas", "OpenAI"],
-    link: "#",
+    link: "https://github.com/adpth/llm-data-analyst",
   },
   {
     year: "2025",
@@ -49,12 +49,12 @@ const projects = [
     year: "2024",
     project: {
       name: "FeedbackFlow",
-      link: "#",
+      link: "https://github.com/adpth/FeedbackFlow",
       shortName: "FeedbackFlow",
     },
     signal: "Full-stack • SaaS-style system",
     builtWith: ["React.js", "Node.js", "MongoDB"],
-    link: "#",
+    link: "https://github.com/adpth/FeedbackFlow",
   },
   {
     year: "2024",
@@ -76,24 +76,24 @@ const projects = [
     },
     signal: "Production • Real-time • Multi-vendor",
     builtWith: ["React Native", "Firebase", "Node.js", "AWS"],
-    link: "https://www.fudoo.in/",
+    link: "https://play.google.com/store/apps/details?id=com.kitsw.canteen",
   },
   {
     year: "2023",
     project: {
       name: "Wevento",
-      link: "",
+      link: "https://github.com/adpth/Wevento",
       shortName: "Wevento",
     },
     signal: "Location - Events based mobile app",
-    builtWith: ["Kotlin", "Firebase", "Php", "Mysql"],
-    link: "",
+    builtWith: ["Kotlin", "Firebase", "PHP", "MySQL"],
+    link: "https://github.com/adpth/Wevento",
   },
   {
     year: "2022",
     project: {
       name: "TSRTC Medaram Jathara",
-      link: "https://play.google.com/store/apps/details?id=com.rtc.medaram",
+      link: "https://rebrand.ly/fphf08l",
       shortName: "TSRTC Medaram Jathara",
     },
     signal: "Government-backed • High-traffic",
@@ -113,67 +113,71 @@ const projects = [
   },
 ];
 
-
 const ProjectRow = ({ project }) => {
   return (
-    <tr className="border-b border-slate-300/10 last:border-none">
-      <td className="py-4 px-8 text-sm">
+    <tr className="border-b border-[#1e1e1e]/60 last:border-none group hover:bg-[#111]/30 transition-colors duration-150">
+      <td className="py-4 px-6 text-sm font-mono text-[#5c5c66]">
         <div className="translate-y-px">{project.year}</div>
       </td>
-      <td className="py-4 pr-4 font-semibold text-slate-200">
+      <td className="py-4 pr-4 font-semibold text-[#f4f4f5] heading-font text-[15px]">
         <div>
           <div className="block sm:hidden">
-            <a
-              className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 text-base"
-              href={project.project.link && project.project.link !== "#" ? project.project.link : "#"}
-              target={project.project.link && project.project.link !== "#" ? "_blank" : "_self"}
-              rel="noreferrer noopener"
-              aria-label={`${project.project.name} (opens in a new tab)`}
-            >
-              <span>
-                {project.project.name.split(" ")[0]}{" "}
-                <span className="inline-block">
-                  {project.project.name.split(" ").slice(1).join(" ")}
+            {project.link ? (
+              <a
+                className="inline-flex items-baseline font-medium leading-tight text-[#f4f4f5] hover:text-[#7ab2ff] focus-visible:text-[#7ab2ff] text-base transition-colors"
+                href={project.link}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={`${project.project.name} (opens in a new tab)`}
+              >
+                <span>
+                  {project.project.name.split(" ")[0]}{" "}
+                  <span className="inline-block">
+                    {project.project.name.split(" ").slice(1).join(" ")}
+                  </span>
                 </span>
-              </span>
-            </a>
+              </a>
+            ) : (
+              <span>{project.project.name}</span>
+            )}
           </div>
           <div className="hidden sm:block">
             {project.project.shortName}
           </div>
         </div>
       </td>
-      <td className="hidden py-4 pr-4 text-sm lg:table-cell">
-        <div className="translate-y-px whitespace-nowrap">
+      <td className="hidden py-4 pr-4 text-xs text-[#a1a1aa] lg:table-cell">
+        <div className="translate-y-px">
           {project.signal}
         </div>
       </td>
-      <td className="hidden py-4 pr-4 lg:table-cell">
-        <ul className="flex flex-wrap gap-1">
+      <td className="hidden py-4 pr-4 lg:table-cell max-w-[320px]">
+        <div className="flex flex-wrap gap-1">
           {project.builtWith.map((tech, idx) => (
-            <li key={idx}>
-              <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
-                {tech}
-              </div>
-            </li>
+            <span
+              key={idx}
+              className="tag tag-neutral text-[10px] font-mono whitespace-nowrap"
+            >
+              {tech}
+            </span>
           ))}
-        </ul>
+        </div>
       </td>
       <td className="hidden py-4 sm:table-cell">
-        {project.link && project.link !== "#" && (
+        {project.link && (
           <a
-            className="border-b border-transparent pb-px transition group-hover:border-teal-300 inline-flex items-baseline font-medium leading-tight text-slate-400 hover:text-teal-300 focus-visible:text-teal-300 text-sm whitespace-nowrap"
+            className="border-b border-transparent pb-px transition group-hover:border-[#7ab2ff] inline-flex items-center font-medium leading-tight text-[#5c5c66] hover:text-[#7ab2ff] focus-visible:text-[#7ab2ff] text-xs max-w-[240px] truncate"
             href={project.link}
             target="_blank"
             rel="noreferrer noopener"
             aria-label={`${project.link} (opens in a new tab)`}
           >
-            {project.link}
+            <span className="truncate">{project.link.replace("https://", "").replace("www.", "")}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="inline-block h-4 w-4 ml-1 transition-transform group-hover:translate-x-1"
+              className="inline-block h-3.5 w-3.5 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               aria-hidden="true"
             >
               <path
@@ -191,17 +195,17 @@ const ProjectRow = ({ project }) => {
 
 export default function ArchiveProjects() {
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
-      <div className="py-24">
-        <a
-          className="group mb-2 inline-flex items-center font-semibold leading-tight text-teal-300"
-          href="/"
+    <div className="px-2 sm:px-4">
+      <div className="py-12">
+        <Link
+          className="group mb-2 inline-flex items-center font-semibold leading-tight text-[#7ab2ff] hover:text-[#2563eb] transition-colors text-sm"
+          to="/"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            className="mr-1 h-4 w-4 rotate-180 transition-transform group-hover:-translate-x-2"
+            className="mr-1.5 h-4 w-4 rotate-180 transition-transform group-hover:-translate-x-1"
             aria-hidden="true"
           >
             <path
@@ -210,28 +214,31 @@ export default function ArchiveProjects() {
               clipRule="evenodd"
             ></path>
           </svg>
-          Tharun Rao
-        </a>
-        <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+          Back to Portfolio
+        </Link>
+        <h1 className="text-3xl font-bold tracking-tight text-[#f4f4f5] sm:text-4xl heading-font mt-2">
           All Projects
         </h1>
-        <div className="overflow-x-auto mt-12">
+        <p className="text-sm text-[#a1a1aa] mt-2 font-mono">
+          Full catalog of applications, automation scripts, and academic labs.
+        </p>
+        <div className="overflow-x-auto mt-8 border border-[#1e1e1e] rounded-xl bg-[#0e0e0e]/50 backdrop-blur-sm">
           <table className="min-w-full border-collapse text-left">
-            <thead className="sticky top-0 z-10 border-b border-slate-300/10 bg-slate-800/75 px-6 py-5 backdrop-blur">
-              <tr>
-                <th className="py-4 px-8 text-sm font-semibold text-slate-200">
+            <thead>
+              <tr className="border-b border-[#1e1e1e] bg-[#111]/80">
+                <th className="py-4 px-6 text-xs font-mono uppercase tracking-wider text-[#5c5c66]">
                   Year
                 </th>
-                <th className="py-4 pr-8 text-sm font-semibold text-slate-200">
+                <th className="py-4 pr-8 text-xs font-mono uppercase tracking-wider text-[#5c5c66]">
                   Project
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">
+                <th className="hidden py-4 pr-8 text-xs font-mono uppercase tracking-wider text-[#5c5c66] lg:table-cell">
                   Signal
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">
+                <th className="hidden py-4 pr-8 text-xs font-mono uppercase tracking-wider text-[#5c5c66] lg:table-cell">
                   Built with
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 sm:table-cell">
+                <th className="hidden py-4 pr-8 text-xs font-mono uppercase tracking-wider text-[#5c5c66] sm:table-cell">
                   Link
                 </th>
               </tr>
