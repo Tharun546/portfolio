@@ -62,7 +62,7 @@ const EXPERIENCES = [
       "Created a library of reusable UI components, cutting laboratory module creation time for faculty by 40%",
       "Partnered directly with faculty and researchers to ship reliable, deployment-ready software under tight academic deadlines",
     ],
-    date: "Aug 2024 – May 2026",
+    date: "Oct 2025 – Jan 2026",
     link: "https://www.pnw.edu/",
   },
   {
@@ -76,6 +76,18 @@ const EXPERIENCES = [
     ],
     date: "Feb 2024 – Aug 2024",
     link: "https://www.accenture.com/",
+  },
+  {
+    title: "Full Stack Engineer",
+    company: "Bhagala Solutions",
+    bullets: [
+      "Co-engineered the core product architecture from MVP to initial launch, establishing front-end (React) and back-end (Node.js) codebase foundations",
+      "Designed database schemas and optimized REST API endpoints, reducing data fetch latency for early users",
+      "Collaborated directly with the founding team to translate product concepts and wireframes into interactive user interfaces",
+      "Maintained strict data security standards and intellectual property compliance during rapid product development phases",
+    ],
+    date: "Jan 2023 – Jan 2024",
+    link: "https://bhagala.com/",
   },
 ];
 
@@ -672,38 +684,46 @@ const ExperienceSection = () => (
       </motion.div>
 
       <div className="flex flex-col gap-2">
-        {EXPERIENCES.map((exp, i) => (
-          <motion.a
-            key={exp.title}
-            variants={fadeUp}
-            custom={i}
-            href={exp.link}
-            target="_blank"
-            rel="noreferrer"
-            className="group card-interactive p-5 sm:p-6"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
-              <div>
-                <h3 className="text-base font-bold text-[#f4f4f5] group-hover:text-[#7ab2ff] transition-colors duration-200 heading-font flex items-center gap-1.5">
-                  {exp.title}
-                  <IconArrowUpRight size={14} className="text-[#5c5c66] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </h3>
-                <p className="text-[#a1a1aa] text-sm">{exp.company}</p>
+        {EXPERIENCES.map((exp, i) => {
+          const CardWrapper = exp.link ? motion.a : motion.div;
+          const wrapperProps = exp.link
+            ? { href: exp.link, target: "_blank", rel: "noreferrer" }
+            : {};
+          return (
+            <CardWrapper
+              key={exp.title}
+              variants={fadeUp}
+              custom={i}
+              {...wrapperProps}
+              className={`group p-5 sm:p-6 ${
+                exp.link ? "card-interactive" : "card-static"
+              }`}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+                <div>
+                  <h3 className="text-base font-bold text-[#f4f4f5] group-hover:text-[#7ab2ff] transition-colors duration-200 heading-font flex items-center gap-1.5">
+                    {exp.title}
+                    {exp.link && (
+                      <IconArrowUpRight size={14} className="text-[#5c5c66] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                    )}
+                  </h3>
+                  <p className="text-[#a1a1aa] text-sm">{exp.company}</p>
+                </div>
+                <span className="text-[#5c5c66] text-xs font-mono shrink-0 mt-0.5 sm:mt-1">
+                  {exp.date}
+                </span>
               </div>
-              <span className="text-[#5c5c66] text-xs font-mono shrink-0 mt-0.5 sm:mt-1">
-                {exp.date}
-              </span>
-            </div>
-            <ul className="space-y-2">
-              {exp.bullets.map((b) => (
-                <li key={b} className="text-[#a1a1aa] text-sm leading-relaxed flex items-start gap-2">
-                  <span className="w-1 h-1 rounded-full bg-[#2563eb] mt-2 shrink-0" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.a>
-        ))}
+              <ul className="space-y-2">
+                {exp.bullets.map((b) => (
+                  <li key={b} className="text-[#a1a1aa] text-sm leading-relaxed flex items-start gap-2">
+                    <span className="w-1 h-1 rounded-full bg-[#2563eb] mt-2 shrink-0" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardWrapper>
+          );
+        })}
       </div>
 
       {/* Leadership */}
