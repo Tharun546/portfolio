@@ -278,7 +278,7 @@ const EDUCATION = [
   {
     degree: "B.Tech in Computer Science & Engineering",
     school: "KITSW (Kakatiya Institute of Technology & Science)",
-    date: "Aug 2020 – May 2024",
+    date: "June 2019 – June 2023",
     bullets: [
       "President of the Computer Science Engineering Association (CSEA)",
       "Co-founded Fudoo — production mobile app on Google Play Store",
