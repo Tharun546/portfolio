@@ -23,7 +23,7 @@ import {
 /* ================================================================
    SITE DATA — edit content here, not inside the components
    ================================================================ */
-const asset = (path) => import.meta.env.BASE_URL + path;
+const asset = (path) => path.startsWith("http") || path.startsWith("data:") ? path : import.meta.env.BASE_URL + path;
 
 const LINKS = {
   github: "https://rebrand.ly/adpth",
@@ -42,208 +42,263 @@ const NAV_ITEMS = [
 ];
 
 const CORE_STACK = [
+  "Node.js",
   "React",
   "TypeScript",
-  "Next.js",
-  "Node.js",
-  "Python",
-  "FastAPI",
   "PostgreSQL",
-  "AWS",
+  "MongoDB",
+  "C#",
+  "Java",
+  "ASP.NET Core",
+  "Spring Boot",
+  "Azure",
 ];
 
 const EXPERIENCES = [
   {
-    title: "Graduate Research Assistant",
+    title: "Graduate Student Employee",
     company: "Purdue University Northwest",
+    location: "USA",
     bullets: [
-      "Designed and built an interactive 3D aerospace learning platform end-to-end, serving 150+ students across engineering curricula",
-      "Architected a responsive React frontend integrating X3D/X3DOM graphics engines, reducing 3D model loading latency by 25% through asset optimization (GLB/GLTF parsing)",
-      "Created a library of reusable UI components, cutting laboratory module creation time for faculty by 40%",
-      "Partnered directly with faculty and researchers to ship reliable, deployment-ready software under tight academic deadlines",
+      "Led the architecture and deployment of an interactive 3D aerospace learning platform, combining React and X3DOM. It's now actively used by over 150 engineering students.",
+      "Rebuilt the 3D asset loading pipeline to use deferred loading and compression, which reduced model loading latency by 25% and made the app usable in busy lab environments.",
+      "Built a modular React component library that lowered the barrier for faculty to create new instructional modules, cutting their turnaround time by about 40%.",
     ],
     date: "Oct 2025 – Jan 2026",
     link: "https://www.pnw.edu/",
   },
   {
-    title: "Associate Software Engineer",
+    title: "Software Engineer",
     company: "Accenture",
+    location: "India",
     bullets: [
-      "Engineered React and Node.js enterprise features on Agile delivery teams, delivering secure, high-compliance applications for global clients",
-      "Cut client-side latency by 20% by implementing code splitting, lazy loading, and state-management optimizations",
-      "Improved API performance by 30% through SQL query indexing and Redis database caching",
-      "Owned CI/CD deployment workflows and resolved live production issues, reducing deployment failures by 15%",
+      "Joined a fast-paced Agile team to deliver enterprise web and mobile applications using React, React Native, Node.js, and Express.",
+      "Tackled database-heavy API endpoints that were struggling under load. By optimizing SQL queries and introducing Redis caching, we improved API response times by ~30%.",
+      "Refactored legacy React component hierarchies and improved state management, which brought down client-side latency by roughly 20% on critical user flows.",
+      "Helped stabilize our CI/CD pipelines with Jenkins and Docker, contributing to a 15% drop in deployment failures over 13 production releases.",
     ],
     date: "Feb 2024 – Aug 2024",
     link: "https://www.accenture.com/",
   },
   {
-    title: "Full Stack Engineer",
-    company: "Bhagala Solutions",
+    title: "Software Engineer",
+    company: "Airbnb",
+    location: "India",
     bullets: [
-      "Co-engineered the core product architecture from MVP to initial launch, establishing front-end (React) and back-end (Node.js) codebase foundations",
-      "Designed database schemas and optimized REST API endpoints, reducing data fetch latency for early users",
-      "Collaborated directly with the founding team to translate product concepts and wireframes into interactive user interfaces",
-      "Maintained strict data security standards and intellectual property compliance during rapid product development phases",
+      "Shipped the MVP for a booking and property management marketplace in just 5 months, scaling it to over 300 launch users.",
+      "Developed the core backend RESTful APIs using Node.js and Express.js, and built out the frontend booking flows in React.",
+      "Redesigned our MongoDB search queries with compound indexes (2dsphere for geospatial data) and aggregation pipelines, slashing average search query execution times from 300ms down to 40ms.",
+      "Implemented an optimistic concurrency control pattern in MongoDB to gracefully handle race conditions and prevent double-bookings during peak traffic.",
     ],
-    date: "Jan 2023 – Jan 2024",
-    link: "https://bhagala.com/",
-  },
+    date: "Mar 2021 – Jan 2024",
+    link: "https://airbnb.com/",
+  }
 ];
 
 const PROJECT_CATEGORIES = ["All", "AI & Data", "Web & SaaS", "Mobile Apps", "EdTech"];
 
 const PROJECTS = [
   {
+    title: "FlareFlow",
+    role: "Solo build",
+    desc: "Built an enterprise-grade, real-time dynamic pricing engine to maximize rental revenue.",
+    impact: "Designed distributed queue processing up to 900k rates in under 12 seconds using parallel Celery workers and Redis.",
+    date: "Mar 2023 – May 2023",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjM2I4MmY2JyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzFkNGVkOCcgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTguNSAxNC41QTIuNSAyLjUgMCAwIDAgMTEgMTJjMC0xLjM4LS41LTItMS0zLTEuMDcyLTIuMTQzLS4yMjQtNC4wNTQgMi02IC41IDIuNSAyIDQuOSA0IDYuNSAyIDEuNiAzIDMuNSAzIDUuNWE3IDcgMCAxIDEtMTQgMGMwLTEuMTUzLjQzMy0yLjI5NCAxLTNhMi41IDIuNSAwIDAgMCAyLjUgMi41eicvPjwvZz48L3N2Zz4=",
+    link: "",
+    featured: true,
+    status: "Production",
+    tags: ["Distributed Systems", "SaaS"],
+    tech: ["Python", "FastAPI", "Celery", "Redis", "PostgreSQL", "React"],
+    category: ["Web & SaaS", "AI & Data"],
+  },
+  {
+    title: "OmniStock",
+    role: "Contract Engineer",
+    desc: "Developed a distributed inventory synchronization platform to prevent overselling across multiple e-commerce channels.",
+    impact: "Designed a centralized webhook ingestion system with Ruby on Rails and Sidekiq to handle 500+ concurrent events per minute with sub-1.5s cross-platform sync.",
+    date: "Jun 2025 – Oct 2025",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMTBiOTgxJyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzA0Nzg1NycgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTIuOTcgMTIuOTJBMiAyIDAgMCAwIDIgMTQuNjN2My4yNGEyIDIgMCAwIDAgLjk3IDEuNzFsMyAxLjhhMiAyIDAgMCAwIDIuMDYgMEwxMiAxOXYtNS41bC01LTMtNC4wMyAyLjQyeicvPjxwYXRoIGQ9J203IDE2LjUtNC43NC0yLjg1Jy8+PHBhdGggZD0nbTcgMTYuNSA1LTMnLz48cGF0aCBkPSdNNyAxNi41djUuMTcnLz48cGF0aCBkPSdNMTIgMTMuNVYxOWwzLjk3IDIuMzhhMiAyIDAgMCAwIDIuMDYgMGwzLTEuOGEyIDIgMCAwIDAgLjk3LTEuNzF2LTMuMjRhMiAyIDAgMCAwLS45Ny0xLjcxTDE3IDEwLjVsLTUgM1onLz48cGF0aCBkPSdtMTcgMTYuNS01LTMnLz48cGF0aCBkPSdtMTcgMTYuNSA0Ljc0LTIuODUnLz48cGF0aCBkPSdNMTcgMTYuNXY1LjE3Jy8+PHBhdGggZD0nTTcuOTcgNC40MkEyIDIgMCAwIDAgNyA2LjEzdjQuMzdsNSAzIDUtM1Y2LjEzYTIgMiAwIDAgMC0uOTctMS43MWwtMy0xLjhhMiAyIDAgMCAwLTIuMDYgMGwtMyAxLjh6Jy8+PHBhdGggZD0nTTEyIDggNy4yNiA1LjE1Jy8+PHBhdGggZD0nbTEyIDggNC43NC0yLjg1Jy8+PHBhdGggZD0nTTEyIDEzLjVWOCcvPjwvZz48L3N2Zz4=",
+    link: "",
+    featured: true,
+    status: "Production",
+    tags: ["Microservices", "E-commerce"],
+    tech: ["Ruby on Rails", "Sidekiq", "PostgreSQL", "Redis", "Docker"],
+    category: ["Web & SaaS", "Backend"],
+  },
+  {
+    title: "Knowvia",
+    role: "Solo build",
+    desc: "Engineered an AI-powered educational platform that transforms unstructured inputs into structured learning paths.",
+    impact: "Implemented a robust multi-provider LLM fallback chain (OpenRouter, NVIDIA NIM, Ollama) and an interactive React Flow graph generation pipeline.",
+    date: "2026",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjOGI1Y2Y2JyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzZkMjhkOScgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTEyIDVhMyAzIDAgMSAwLTUuOTk3LjEyNSA0IDQgMCAwIDAtMi41MjYgNS43NyA0IDQgMCAwIDAgLjU1NiA2LjU4OEE0IDQgMCAxIDAgMTIgMThaJy8+PHBhdGggZD0nTTEyIDVhMyAzIDAgMSAxIDUuOTk3LjEyNSA0IDQgMCAwIDEgMi41MjYgNS43NyA0IDQgMCAwIDEtLjU1NiA2LjU4OEE0IDQgMCAxIDEgMTIgMThaJy8+PHBhdGggZD0nTTE1IDEzYTQuNSA0LjUgMCAwIDEtMy00IDQuNSA0LjUgMCAwIDEtMyA0Jy8+PHBhdGggZD0nTTE3LjU5OSA2LjVhMyAzIDAgMCAwIC4zOTktMS4zNzUnLz48L2c+PC9zdmc+",
+    link: "",
+    featured: true,
+    status: "Production",
+    tags: ["AI SaaS", "EdTech"],
+    tech: ["Next.js 14", "React 18", "TypeScript", "Firebase", "OpenAI", "React Flow"],
+    category: ["Web & SaaS", "AI & Data"],
+  },
+  {
+    title: "KeylessGuest",
+    role: "Solo build",
+    desc: "Built a secure hospitality platform to replace physical key handovers with automated temporal digital keycards.",
+    impact: "Enforced temporal database rules with Supabase RLS achieving 100% containment. Handled Stripe Connect webhooks in under 480ms.",
+    date: "2026",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZjU5ZTBiJyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nI2I0NTMwOScgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nbTE1LjUgNy41IDIuMyAyLjNhMSAxIDAgMCAwIDEuNCAwbDIuMS0yLjFhMSAxIDAgMCAwIDAtMS40TDE5IDQnLz48cGF0aCBkPSdtMjEgMi05LjYgOS42Jy8+PGNpcmNsZSBjeD0nNy41JyBjeT0nMTUuNScgcj0nNS41Jy8+PC9nPjwvc3ZnPg==",
+    link: "",
+    featured: true,
+    status: "Production",
+    tags: ["Security", "SaaS"],
+    tech: ["Next.js 15", "React 19", "TypeScript", "Stripe API", "Supabase", "PostgreSQL"],
+    category: ["Web & SaaS"],
+  },
+  {
     title: "TaskPilot AI",
     role: "Solo build",
-    desc: "An autonomous AI task-planning SaaS that decomposes complex user goals into dynamically scheduled sub-tasks.",
-    impact: "Implemented structured LLM outputs using Gemini API and dynamic dependency graphs to auto-schedule tasks. Built with Next.js, FastAPI, and PostgreSQL.",
+    desc: "Built an autonomous task-planning SaaS that turns high-level goals into executable sub-tasks.",
+    impact: "Used Next.js, FastAPI, PostgreSQL, and Gemini to dynamically auto-schedule task dependency graphs.",
     date: "Apr – May 2026",
     image: "taskpilot_thumbnail.png",
     link: "https://github.com/adpth/TaskPilot-AI",
     featured: true,
     status: "Production",
     tags: ["AI SaaS"],
-    tech: ["Next.js", "React 19", "FastAPI", "PostgreSQL", "Gemini AI"],
+    tech: ["Next.js", "FastAPI", "Python", "PostgreSQL", "Supabase", "Gemini AI"],
     category: ["Web & SaaS", "AI & Data"],
-  },
-  {
-    title: "X3D-VR for Aerospace",
-    role: "Graduate research",
-    desc: "Interactive browser-based 3D visualization platform for aerospace engineering curricula.",
-    impact: "Directly adopted by the Aerospace department at Purdue NW. Rendered 3D GLB turbine models dynamically using X3DOM and React.",
-    date: "Oct 2025 – Jan 2026",
-    image: "aerospace_thumbnail_final.png",
-    link: "https://xreal-xperienz.org/x3d/beta/index.html",
-    featured: true,
-    status: "Live",
-    tags: ["EdTech"],
-    tech: ["X3D", "X3DOM", "GLB", "React"],
-    category: ["Web & SaaS", "EdTech"],
-  },
-  {
-    title: "Fudoo",
-    role: "Co-founder",
-    desc: "A real-time, multi-vendor food ordering mobile application shipped to the Google Play Store.",
-    impact: "Co-founded and scaled the mobile app to 500+ active student users. Implemented Firebase Realtime DB and AWS microservices to cut checkout transaction latency by 30%.",
-    date: "Jun 2023 – Aug 2024",
-    image: "fudoo_thumbnail.png",
-    link: "https://play.google.com/store/apps/details?id=com.kitsw.canteen",
-    featured: true,
-    status: "Play Store",
-    tags: ["Production"],
-    tech: ["React Native", "Firebase", "Node.js", "AWS"],
-    category: ["Mobile Apps"],
   },
   {
     title: "TSRTC Medaram Jathara",
     role: "Lead developer",
-    desc: "Government-backed transit and navigation app for one of India's largest religious gatherings (10M+ attendees).",
-    impact: "Served 15,000+ active commuters with real-time GPS tracking. Awarded official recognition by the State Transport Corporation (TSRTC).",
+    desc: "Built a government-backed public transit app for one of India's largest religious gatherings.",
+    impact: "Served 15,000+ active commuters with real-time GPS tracking using Redis caching and geospatial MongoDB queries.",
     date: "Jan – Feb 2022",
     image: "tsrtc_logo.webp",
     link: "https://rebrand.ly/fphf08l",
     featured: true,
     status: "Govt. recognized",
     tags: ["Public Utility"],
-    tech: ["Java", "Firebase", "MySQL", "Google Cloud"],
+    tech: ["Java", "Android SDK", "Firebase", "MongoDB", "Redis", "Node.js"],
+    category: ["Mobile Apps", "Backend"],
+  },
+  {
+    title: "Fudoo",
+    role: "Co-founder",
+    desc: "Co-founded a hyper-local food delivery app that handled campus-wide ordering.",
+    impact: "Scaled to 500+ active users and 1,000+ weekly transactions. Implemented an offline-first React Native queue to cut checkout wait time by ~50%.",
+    date: "Jun 2023 – Aug 2024",
+    image: "fudoo_thumbnail.png",
+    link: "",
+    featured: true,
+    status: "Play Store",
+    tags: ["Production"],
+    tech: ["React Native", "Firebase", "Node.js", "AWS", "Express.js"],
     category: ["Mobile Apps"],
   },
   {
-    title: "FeedbackFlow",
+    title: "Smart Receipt & Expense Tracker",
     role: "Solo build",
-    desc: "Web platform for teams to collect, manage, and embed user feedback widgets.",
-    impact: "Reduced feedback collection setup from hours to minutes using a custom script embed.",
-    date: "Sep – Dec 2024",
-    image: "feedback_flow_logo.png",
+    desc: "Developed a cross-platform mobile application that uses multimodal AI to extract and categorize receipt data instantly.",
+    impact: "Processed 500+ test receipts, achieving 95% OCR/extraction accuracy via Gemini Vision API with sub-2s average extraction latency.",
+    date: "Feb 2025 – May 2025",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZWM0ODk5JyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nI2JlMTg1ZCcgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTQgMnYyMGwyLTEgMiAxIDItMSAyIDEgMi0xIDIgMSAyLTEgMiAxVjJsLTIgMS0yLTEtMiAxLTItMS0yIDEtMi0xLTIgMS0yLTF6Jy8+PHBhdGggZD0nTTE2IDE0SDgnLz48cGF0aCBkPSdNMTYgMTBIOCcvPjwvZz48L3N2Zz4=",
     link: "",
-    tags: ["SaaS"],
-    tech: ["React.js", "Node.js", "MongoDB"],
-    category: ["Web & SaaS"],
-  },
-  {
-    title: "ShortLnk",
-    role: "Solo build",
-    desc: "Production-ready URL shortener service built with the MERN stack.",
-    impact: "Deployed and working end-to-end with optimized redirects and custom analytics dashboard.",
-    date: "2024",
-    image: "",
-    link: "https://github.com/adpth/ShortLnk",
-    tags: ["Full-stack", "Utility"],
-    tech: ["Node.js", "MongoDB", "React.js", "Express.js"],
-    category: ["Web & SaaS"],
-  },
-  {
-    title: "Wevento",
-    role: "Co-developer",
-    desc: "Location-based events discovery mobile app using native Android technology.",
-    impact: "Connected users to nearby events in real time with Google Maps API and Firebase.",
-    date: "2023",
-    image: "",
-    link: "",
-    tags: ["Mobile App"],
-    tech: ["Kotlin", "Firebase", "PHP", "MySQL"],
-    category: ["Mobile Apps"],
-  },
-  {
-    title: "AI Sales Outreach Assistant",
-    role: "Solo build",
-    desc: "Automated lead research and personalized outreach workflows.",
-    impact: "Architecting multi-agent orchestration via Python and LLMs; backend schema 80% complete.",
-    date: "2026",
-    image: "",
-    link: "",
-    tags: ["AI Agent", "Automation"],
-    tech: ["Node.js", "Python", "LLMs"],
-    category: ["AI & Data"],
-    isWip: true,
-  },
-  {
-    title: "LLM-Powered Data Analyst",
-    role: "Solo build",
-    desc: "AI-powered data analysis and report generation platform.",
-    impact: "Developing AI-powered analytics playground; frontend mockups and FastAPI routing completed.",
-    date: "2026",
-    image: "",
-    link: "",
-    tags: ["AI Engineering", "Data"],
-    tech: ["React", "TypeScript", "FastAPI", "OpenAI"],
-    category: ["AI & Data"],
-    isWip: true,
+    featured: true,
+    status: "Production",
+    tags: ["Mobile", "AI Engineering"],
+    tech: ["React Native", "Python", "FastAPI", "Gemini Vision", "PostgreSQL", "Supabase"],
+    category: ["Mobile Apps", "AI & Data"],
   },
 ];
 
 const SKILL_GROUPS = [
   {
-    title: "Frontend",
-    skills: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Framer Motion", "HTML5 / CSS3"],
-    core: ["React.js", "Next.js", "TypeScript"],
+    title: "Languages",
+    skills: ["JavaScript", "TypeScript", "Python", "SQL", "C#", "Java", "HTML5", "CSS3"],
+    core: ["JavaScript", "TypeScript", "Python", "SQL", "C#", "Java"],
+  },
+  {
+    title: "Frameworks & Libraries",
+    skills: [
+      "React.js 17/18/19",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "React Native",
+      "ASP.NET Core",
+      "Entity Framework Core",
+      "Spring Boot",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    core: ["React.js", "Next.js", "Node.js", "ASP.NET Core", "Spring Boot"],
   },
   {
     title: "Backend & APIs",
-    skills: ["Node.js", "Express.js", "FastAPI", "Python", "Java", "REST APIs"],
-    core: ["Node.js", "FastAPI"],
+    skills: [
+      "RESTful APIs",
+      "Microservices Architecture",
+      "Authentication (JWT/OAuth)",
+      "FastAPI",
+      "Express.js",
+      "Web API",
+      "Spring Boot APIs",
+      "Swagger / OpenAPI",
+    ],
+    core: ["RESTful APIs", "Microservices", "Node.js", "Authentication (JWT/OAuth)"],
   },
   {
-    title: "Mobile",
-    skills: ["React Native", "Kotlin", "Android SDK", "Play Store delivery"],
-    core: ["React Native"],
+    title: "Databases & Storage",
+    skills: [
+      "PostgreSQL",
+      "MongoDB",
+      "SQL Server",
+      "MySQL",
+      "Redis",
+      "Firebase",
+      "Supabase",
+      "AWS S3",
+    ],
+    core: ["PostgreSQL", "MongoDB", "SQL Server", "Redis"],
   },
   {
-    title: "Data & Cloud",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Supabase", "Firebase", "AWS", "Google Cloud"],
-    core: ["PostgreSQL", "AWS"],
+    title: "Cloud & DevOps",
+    skills: [
+      "AWS",
+      "Google Cloud",
+      "Microsoft Azure",
+      "Docker",
+      "CI/CD",
+      "Git",
+      "Azure DevOps",
+    ],
+    core: [
+      "AWS",
+      "Docker",
+      "CI/CD",
+      "Git",
+      "Microsoft Azure",
+    ],
   },
   {
-    title: "AI Engineering",
-    skills: ["OpenAI", "Gemini AI", "LLM integration", "Prompt Engineering", "Pandas"],
-    core: ["LLM integration"],
+    title: "Tools & Engineering Practices",
+    skills: [
+      "VS Code",
+      "Visual Studio",
+      "Postman",
+      "Jest",
+      "xUnit",
+      "Swagger",
+      "Vercel",
+      "Render",
+    ],
+    core: ["VS Code", "Postman", "Unit Testing", "Swagger"],
   },
   {
-    title: "DevOps & Tooling",
-    skills: ["Git / GitHub", "Docker", "CI/CD", "Postman", "Vercel", "Render"],
-    core: ["CI/CD"],
+    title: "AI & Mobile",
+    skills: ["React Native", "Gemini AI", "LLM integration", "OpenAI", "Android SDK"],
+    core: ["React Native", "LLM integration"],
   },
 ];
 
@@ -262,17 +317,31 @@ const CERTIFICATIONS = [
     date: "Aug 2022",
     link: "https://www.coursera.org/account/accomplishments/verify/A8HQQ6Z5L6R9",
   },
+  {
+    title: "Database Programming with SQL",
+    issuer: "Oracle Academy",
+    desc: "Relational database design, complex SQL query optimization, and schema normalization.",
+    date: "Certified",
+    link: "",
+  },
+  {
+    title: "MERN Stack Internship",
+    issuer: "Accenture",
+    desc: "Enterprise full-stack web application development, REST API design, and microservices.",
+    date: "Certified",
+    link: "",
+  },
 ];
 
 const EDUCATION = [
   {
-    degree: "M.S. in Computer Science",
+    degree: "M.S. in Computer Science (GPA: 3.52)",
     school: "Purdue University Northwest",
     date: "Aug 2024 – May 2026",
     bullets: [
       "Key Coursework: Distributed Systems, Advanced Algorithms, Artificial Intelligence, Database Management Systems",
-      "Graduate Research Assistant — built the Aerospace/X3D educational platform",
-      "Designed & launched FeedbackFlow and ShortLnk (MERN-based SaaS tools)",
+      "Graduate Student Employee — built the Aerospace/X3D educational 3D platform serving 150+ engineering students",
+      "Specialized in Software Engineering, System Architecture, and Distributed Cloud Computing",
     ],
   },
   {
@@ -280,9 +349,9 @@ const EDUCATION = [
     school: "KITSW (Kakatiya Institute of Technology & Science)",
     date: "June 2019 – June 2023",
     bullets: [
-      "President of the Computer Science Engineering Association (CSEA)",
-      "Co-founded Fudoo — production mobile app on Google Play Store",
-      "Developed TSRTC Medaram Jathara app — awarded by the government",
+      "President, CSEA (Aug 2022 – Apr 2023) · Joint Secretary (Aug 2021) · Executive Member (Nov 2020)",
+      "Co-founded Fudoo — production mobile app on Google Play Store with 1,000+ weekly transactions",
+      "Developed TSRTC Medaram Jathara app — government-recognized public transit app serving 15,000+ commuters",
     ],
   },
 ];
@@ -483,7 +552,7 @@ const SidebarContent = ({ activeSection, onNavigate, onClose, isMobile }) => (
         Tharun Pasupuleti
       </h2>
       <p className="text-xs text-[#a1a1aa] mt-0.5 font-medium">
-        Full-Stack Engineer
+        Software Development Engineer (SDE)
       </p>
       <div className="flex items-center gap-1 mt-1">
         <IconMapPin size={11} className="text-[#5c5c66]" />
@@ -560,9 +629,9 @@ const SidebarContent = ({ activeSection, onNavigate, onClose, isMobile }) => (
    HERO
    ================================================================ */
 const HERO_STATS = [
-  { n: "10+", label: "Projects shipped" },
-  { n: "3", label: "Apps in production" },
-  { n: "1000s", label: "Real users served" },
+  { n: "15K+", label: "Users & commuters served" },
+  { n: "30%", label: "API latency reduction" },
+  { n: "10+", label: "Production & systems builds" },
 ];
 
 const HeroSection = ({ onContact }) => (
@@ -577,27 +646,21 @@ const HeroSection = ({ onContact }) => (
 
       {/* Headline */}
       <motion.div variants={fadeUp}>
-        <p className="kicker mb-4">full-stack engineer · ms cs, purdue northwest</p>
+        <p className="kicker mb-4">software development engineer (sde) · ms cs, purdue northwest</p>
         <h1 className="text-[2.5rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.08] heading-font">
-          Building products
+          Engineering scalable systems
           <br />
-          <span className="gradient-text">that ship.</span>
+          <span className="gradient-text">built for production.</span>
         </h1>
       </motion.div>
 
       {/* Bio */}
       <motion.div variants={fadeUp} className="max-w-xl space-y-3">
         <p className="text-[#a1a1aa] text-[15px] leading-relaxed">
-          I build across the whole stack — React front ends, Node.js and Python
-          APIs, mobile apps, and AI-powered systems. Recent{" "}
-          <span className="text-[#f4f4f5] font-medium">M.S. Computer Science</span>{" "}
-          graduate from Purdue University Northwest, previously Associate
-          Software Engineer at Accenture.
+          I'm a Software Development Engineer who loves building backend systems and full-stack applications that actually scale. Over the past 3+ years at Airbnb and Accenture, I've focused on shipping reliable microservices, optimizing APIs, and squashing database bottlenecks.
         </p>
         <p className="text-[#71717a] text-sm leading-relaxed">
-          I've shipped production apps on the Play Store, built a
-          government-recognized public utility, and launched AI SaaS platforms
-          end to end.
+          I hold an <span className="text-[#f4f4f5] font-medium">M.S. in Computer Science</span> from Purdue University Northwest. I enjoy taking ownership of the entire product lifecycle—from problem definition to production deployment—whether I'm building government-backed public transit apps for 15,000+ commuters or reducing API latency by 30%.
         </p>
       </motion.div>
 
@@ -707,7 +770,14 @@ const ExperienceSection = () => (
                       <IconArrowUpRight size={14} className="text-[#5c5c66] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                     )}
                   </h3>
-                  <p className="text-[#a1a1aa] text-sm">{exp.company}</p>
+                  <p className="text-[#a1a1aa] text-sm font-medium">
+                    {exp.company}
+                    {exp.location && (
+                      <span className="text-[#5c5c66] text-xs font-normal ml-2">
+                        · {exp.location}
+                      </span>
+                    )}
+                  </p>
                 </div>
                 <span className="text-[#5c5c66] text-xs font-mono shrink-0 mt-0.5 sm:mt-1">
                   {exp.date}
@@ -732,7 +802,7 @@ const ExperienceSection = () => (
           Leadership
         </p>
         <div className="card-static p-5 sm:p-6">
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
             <div>
               <h3 className="text-base font-bold text-[#f4f4f5] heading-font">
                 President
@@ -742,13 +812,19 @@ const ExperienceSection = () => (
               </p>
             </div>
             <span className="text-[#5c5c66] text-xs font-mono shrink-0">
-              Aug 2021 – May 2024
+              Aug 2022 – Apr 2023
             </span>
           </div>
-          <p className="text-[#a1a1aa] text-sm leading-relaxed flex items-start gap-2">
-            <span className="w-1 h-1 rounded-full bg-[#2563eb] mt-2 shrink-0" />
-            Led initiatives serving 200+ students, organized technical workshops, and coordinated coding competitions
-          </p>
+          <div className="space-y-2">
+            <p className="text-[#a1a1aa] text-sm leading-relaxed flex items-start gap-2">
+              <span className="w-1 h-1 rounded-full bg-[#2563eb] mt-2 shrink-0" />
+              Led technical initiatives, workshops, and coding competitions for 200+ CS students as elected President
+            </p>
+            <p className="text-[#71717a] text-xs leading-relaxed flex items-start gap-2">
+              <span className="w-1 h-1 rounded-full bg-[#3f3f46] mt-1.5 shrink-0" />
+              Previously Joint Secretary (Aug 2021 – Jul 2022) · Executive Member (Nov 2020 – Jul 2021)
+            </p>
+          </div>
         </div>
       </motion.div>
     </motion.div>

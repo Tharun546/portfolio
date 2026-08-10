@@ -37,7 +37,7 @@ const Home = () => {
             <span className="text-neutral-700">DEVELOPMENT ENGINEER</span>
           </h1>
           <p className="text-neutral-400 text-base md:text-lg text-start">
-            I’m a Software Development Engineer with hands-on experience
+            I’m a Software Development Engineer with <span className="text-white font-medium">3+ years of hands-on experience</span>
             building and shipping{" "}
             <span className="text-white">
               production-grade web and mobile applications.{" "}

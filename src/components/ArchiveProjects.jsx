@@ -1,116 +1,21 @@
 import { Link } from "react-router-dom";
 
 const projects = [
-  {
-    year: "2026",
-    project: {
-      name: "TaskPilot AI",
-      link: "https://github.com/adpth/TaskPilot-AI",
-      shortName: "TaskPilot AI",
-    },
-    signal: "AI SaaS Platform • Production-ready",
-    builtWith: ["Next.js", "React 19", "FastAPI", "PostgreSQL", "Supabase", "Gemini AI", "TypeScript"],
-    link: "https://github.com/adpth/TaskPilot-AI",
-  },
-  {
-    year: "2026",
-    project: {
-      name: "AI Sales Outreach Assistant",
-      link: "https://github.com/adpth/ai-sales-outreach",
-      shortName: "AI Sales Assistant",
-    },
-    signal: "Workflow Automation • AI Agent",
-    builtWith: ["Node.js", "Python", "LLMs"],
-    link: "",
-  },
-  {
-    year: "2026",
-    project: {
-      name: "LLM-Powered Data Analyst",
-      link: "https://github.com/adpth/llm-data-analyst",
-      shortName: "LLM Data Analyst",
-    },
-    signal: "AI Engineering • Data Analysis",
-    builtWith: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "Pandas", "OpenAI"],
-    link: "",
-  },
-  {
-    year: "2025",
-    project: {
-      name: "X3D-VR for Engineering & Aerospace",
-      link: "https://xreal-xperienz.org/x3d/beta/index.html",
-      shortName: "X3D-VR",
-    },
-    signal: "Educational Technology • Live",
-    builtWith: ["X3D", "X3DOM", "GLB", "React"],
-    link: "https://xreal-xperienz.org/x3d/beta/index.html",
-  },
-  {
-    year: "2024",
-    project: {
-      name: "FeedbackFlow",
-      link: "https://github.com/adpth/FeedbackFlow",
-      shortName: "FeedbackFlow",
-    },
-    signal: "Full-stack • SaaS-style system",
-    builtWith: ["React.js", "Node.js", "MongoDB"],
-    link: "",
-  },
-  {
-    year: "2024",
-    project: {
-      name: "ShortLnk",
-      link: "https://github.com/adpth/ShortLnk",
-      shortName: "ShortLnk",
-    },
-    signal: "Working - Production-ready",
-    builtWith: ["Node.js", "MongoDB", "React.js", "Express.js"],
-    link: "https://github.com/adpth/ShortLnk",
-  },
-  {
-    year: "2023",
-    project: {
-      name: "Fudoo",
-      link: "https://play.google.com/store/apps/details?id=com.kitsw.canteen",
-      shortName: "Fudoo",
-    },
-    signal: "Production • Real-time • Multi-vendor",
-    builtWith: ["React Native", "Firebase", "Node.js", "AWS"],
-    link: "https://play.google.com/store/apps/details?id=com.kitsw.canteen",
-  },
-  {
-    year: "2023",
-    project: {
-      name: "Wevento",
-      link: "https://github.com/adpth/Wevento",
-      shortName: "Wevento",
-    },
-    signal: "Location - Events based mobile app",
-    builtWith: ["Kotlin", "Firebase", "PHP", "MySQL"],
-    link: "",
-  },
-  {
-    year: "2022",
-    project: {
-      name: "TSRTC Medaram Jathara",
-      link: "https://rebrand.ly/fphf08l",
-      shortName: "TSRTC Medaram Jathara",
-    },
-    signal: "Government-backed • High-traffic",
-    builtWith: ["Java", "Firebase", "MySQL", "Google Cloud"],
-    link: "https://rebrand.ly/fphf08l",
-  },
-  {
-    year: "2020",
-    project: {
-      name: "Corona Case Tracker",
-      link: "https://github.com/adpth/COVID-19",
-      shortName: "Covid 19 Tracker",
-    },
-    signal: "Learning project • API integration",
-    builtWith: ["Java", "rapid-api"],
-    link: "https://github.com/adpth/COVID-19",
-  },
+  { year: "2026", project: { name: "TaskPilot AI", link: "https://github.com/adpth/TaskPilot-AI", shortName: "TaskPilot AI" }, signal: "AI SaaS Platform • Production-ready", builtWith: ["Next.js", "React 19", "FastAPI", "PostgreSQL", "Supabase", "Gemini AI"], link: "https://github.com/adpth/TaskPilot-AI" },
+  { year: "2026", project: { name: "Knowvia", link: "", shortName: "Knowvia" }, signal: "AI Learning Platform", builtWith: ["Next.js", "Firebase", "OpenRouter"], link: "" },
+  { year: "2026", project: { name: "KeylessGuest", link: "", shortName: "KeylessGuest" }, signal: "Security • SaaS", builtWith: ["Next.js", "Supabase", "Stripe"], link: "" },
+  { year: "2026", project: { name: "SprintForge", link: "", shortName: "SprintForge" }, signal: "AI Engineering • SaaS", builtWith: ["Next.js", "Prisma", "Google AI"], link: "" },
+  { year: "2026", project: { name: "TaskBoard", link: "", shortName: "TaskBoard" }, signal: "State Management • Monorepo", builtWith: ["React", "Redux-Saga", "Nx"], link: "" },
+  { year: "2026", project: { name: "JSONLabs", link: "", shortName: "JSONLabs" }, signal: "Frontend Learning Platform", builtWith: ["React", "JavaScript"], link: "" },
+  { year: "2026", project: { name: "Remindr", link: "", shortName: "Remindr" }, signal: "Timezone-aware Utility App", builtWith: ["React 19", "Vite", "Firebase", "Luxon"], link: "" },
+  { year: "2025", project: { name: "OmniStock", link: "", shortName: "OmniStock" }, signal: "Distributed Microservices", builtWith: ["Ruby on Rails", "Sidekiq", "PostgreSQL"], link: "" },
+  { year: "2025", project: { name: "Smart Receipt & Expense Tracker", link: "", shortName: "Smart Tracker" }, signal: "AI Engineering • Mobile", builtWith: ["React Native", "FastAPI", "Gemini Vision"], link: "" },
+  { year: "2025", project: { name: "X3D-VR for Aerospace", link: "https://xreal-xperienz.org/x3d/beta/index.html", shortName: "X3D-VR" }, signal: "Educational Technology • WebGL", builtWith: ["X3D", "X3DOM", "React"], link: "https://xreal-xperienz.org/x3d/beta/index.html" },
+  { year: "2024", project: { name: "FeedbackFlow", link: "", shortName: "FeedbackFlow" }, signal: "Full-stack • SaaS", builtWith: ["React.js", "Node.js", "MongoDB"], link: "" },
+  { year: "2023", project: { name: "FlareFlow", link: "", shortName: "FlareFlow" }, signal: "Distributed Systems • Pricing Engine", builtWith: ["Python", "FastAPI", "Celery", "Redis"], link: "" },
+  { year: "2023", project: { name: "Fudoo", link: "", shortName: "Fudoo" }, signal: "Production • Multi-vendor", builtWith: ["React Native", "Firebase", "Node.js", "AWS"], link: "" },
+  { year: "2022", project: { name: "Wvento", link: "", shortName: "Wvento" }, signal: "Location & Events Mobile App", builtWith: ["React Native", "Node.js", "Firebase", "MongoDB"], link: "" },
+  { year: "2022", project: { name: "TSRTC Medaram Jathara", link: "https://rebrand.ly/fphf08l", shortName: "TSRTC Transit" }, signal: "Government-backed • High-traffic", builtWith: ["Java", "Firebase", "MySQL", "Google Cloud"], link: "https://rebrand.ly/fphf08l" },
 ];
 
 const ProjectRow = ({ project }) => {
