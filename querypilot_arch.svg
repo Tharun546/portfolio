@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg_qp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090a16"/>
+      <stop offset="100%" stop-color="#11152e"/>
+    </linearGradient>
+    <linearGradient id="cardBg_qp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151934"/>
+      <stop offset="100%" stop-color="#0d1024"/>
+    </linearGradient>
+    <filter id="shadow_qp" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg_qp)"/>
+  
+  <!-- Grid -->
+  <g opacity="0.08" stroke="#818cf8" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Title Badge -->
+  <g transform="translate(40, 36)">
+    <rect width="110" height="24" rx="6" fill="#312e81" stroke="#4f46e5" stroke-width="1"/>
+    <text x="12" y="16" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="600" letter-spacing="1">SYSTEM ARCH</text>
+    <text x="124" y="17" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700">QueryPilot · Agentic Text-to-SQL &amp; Eval Harness</text>
+    <text x="124" y="38" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">LangGraph State Machine · Two-Layer Read-Only Safety · Error-Driven Self-Repair · CI Regression Gate</text>
+  </g>
+
+  <!-- Node 1: Agent State Machine -->
+  <g transform="translate(40, 120)" filter="url(#shadow_qp)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg_qp)" stroke="#2b325c" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#1e1b4b"/>
+    <!-- Icon: LangGraph state machine / branching tools -->
+    <circle cx="28" cy="30" r="3" fill="#818cf8"/>
+    <circle cx="40" cy="25" r="3" fill="#a78bfa"/>
+    <circle cx="40" cy="45" r="3" fill="#a78bfa"/>
+    <circle cx="28" cy="42" r="3" fill="#6366f1"/>
+    <path d="M28 30 L40 25 M28 30 L40 45 M28 42 L40 45" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Agent State Graph</text>
+    <text x="64" y="48" fill="#818cf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">LangGraph &amp; 5 Tools</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Autonomous Schema Crawl</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">CREATE TABLE &amp; Samples</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Query Plan Pre-Inspection</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#1e1b4b"/>
+    <text x="24" y="222" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">Python 3.12 · LangGraph</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M260 245 L285 245" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="285,241 295,245 285,249" fill="#6366f1"/>
+
+  <!-- Node 2: Safety & Self-Repair Loop (Highlighted Active) -->
+  <g transform="translate(295, 120)" filter="url(#shadow_qp)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg_qp)" stroke="#6366f1" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#312e81"/>
+    <!-- Icon: Shield with self-repair circular loop -->
+    <path d="M34 24 L42 27 V34 C42 39 34 43 34 43 C34 43 26 39 26 34 V27 Z" stroke="#a5b4fc" stroke-width="1.5" fill="none"/>
+    <path d="M31 33 L33.5 35.5 L37 31" stroke="#38bdf8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Safety &amp; Self-Repair</text>
+    <text x="64" y="48" fill="#a78bfa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">AST + Read-Only SQLite</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Two-Layer Write Rejection</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Timeout &amp; Row-Cap Guard</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Error Feedback Repair Loop</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#312e81"/>
+    <text x="24" y="222" fill="#ddd6fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">FastAPI · SQLite · Pydantic</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M515 245 L540 245" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="540,241 550,245 540,249" fill="#6366f1"/>
+
+  <!-- Node 3: Eval Harness & CI Gate -->
+  <g transform="translate(550, 120)" filter="url(#shadow_qp)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg_qp)" stroke="#2b325c" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#1e1b4b"/>
+    <!-- Icon: Benchmark target / check gate -->
+    <circle cx="34" cy="36" r="9" stroke="#c084fc" stroke-width="1.5" fill="none"/>
+    <circle cx="34" cy="36" r="5" stroke="#818cf8" stroke-width="1" fill="none"/>
+    <circle cx="34" cy="36" r="2" fill="#38bdf8"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Eval Harness &amp; CI</text>
+    <text x="64" y="48" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">Ground Truth Benchmarks</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Result-Set Semantic Match</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Repair Rate &amp; Cost Metrics</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#0f1228"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">PR CI Regression Gate</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#1e1b4b"/>
+    <text x="24" y="222" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">pytest · GitHub Actions</text>
+  </g>
+</svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c121e"/>
+      <stop offset="100%" stop-color="#0e172a"/>
+    </linearGradient>
+    <linearGradient id="cardBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141d2f"/>
+      <stop offset="100%" stop-color="#0d1424"/>
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg2)"/>
+  
+  <!-- Grid -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Title Badge -->
+  <g transform="translate(40, 36)">
+    <rect width="110" height="24" rx="6" fill="#0c4a6e" stroke="#0284c7" stroke-width="1"/>
+    <text x="12" y="16" fill="#7dd3fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="600" letter-spacing="1">SYSTEM ARCH</text>
+    <text x="124" y="17" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700">AI NotebookLM Clone · Document &amp; Audio RAG</text>
+    <text x="124" y="38" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Decoupled Next.js + FastAPI · Multi-Stage LangChain · Coqui TTS Audio Pipeline</text>
+  </g>
+
+  <!-- Node 1: Ingestion & Validation -->
+  <g transform="translate(40, 120)" filter="url(#shadow2)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg2)" stroke="#1e293b" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#0369a1"/>
+    <path d="M26 26 H42 V44 H26 Z M30 31 H38 M30 35 H38 M30 39 H35" stroke="#e0f2fe" stroke-width="1.5" fill="none"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Doc Processing</text>
+    <text x="64" y="48" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">FastAPI Ingestion</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">PDF &amp; Text Extraction</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">LangChain Pipeline</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">JsonOutputParser Strictness</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#0c4a6e"/>
+    <text x="24" y="222" fill="#bae6fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">Python · FastAPI</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M260 245 L285 245" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="285,241 295,245 285,249" fill="#0284c7"/>
+
+  <!-- Node 2: Gemini RAG Model -->
+  <g transform="translate(295, 120)" filter="url(#shadow2)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg2)" stroke="#0284c7" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#075985"/>
+    <circle cx="34" cy="36" r="7" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+    <path d="M34 25 L34 29 M34 43 L34 47 M23 36 L27 36 M41 36 L45 36" stroke="#7dd3fc" stroke-width="2"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Grounded RAG</text>
+    <text x="64" y="48" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">Context Synthesis</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Google Gemini 1.5</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Multi-Speaker Scripting</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Hallucination Mitigation</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#0c4a6e"/>
+    <text x="24" y="222" fill="#e0f2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">LangChain · Gemini</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M515 245 L540 245" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="540,241 550,245 540,249" fill="#0284c7"/>
+
+  <!-- Node 3: Audio Synthesis -->
+  <g transform="translate(550, 120)" filter="url(#shadow2)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg2)" stroke="#1e293b" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#0369a1"/>
+    <path d="M28 42 L28 30 L38 24 L38 48 Z" fill="#7dd3fc"/>
+    <path d="M41 32 Q45 36 41 40" stroke="#7dd3fc" stroke-width="2" fill="none"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Podcast Audio</text>
+    <text x="64" y="48" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">TTS Generation</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Coqui TTS Synthesis</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">PyDub Audio Stitching</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#08101e"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Lazy Model Loading</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#0c4a6e"/>
+    <text x="24" y="222" fill="#7dd3fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">PyDub · Next.js UI</text>
+  </g>
+</svg>
