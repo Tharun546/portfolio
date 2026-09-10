@@ -12,13 +12,11 @@ import {
   IconCertificate,
   IconMenu2,
   IconX,
-  IconFileDownload,
   IconBrandGithub,
   IconBrandLinkedin,
   IconArrowUpRight,
   IconMapPin,
-  IconTrophy,
-} from "@tabler/icons-react";
+} from "../icons";
 
 /* ================================================================
    SITE DATA — edit content here, not inside the components
@@ -26,9 +24,11 @@ import {
 const asset = (path) => path.startsWith("http") || path.startsWith("data:") ? path : import.meta.env.BASE_URL + path;
 
 const LINKS = {
-  github: "https://rebrand.ly/adpth",
-  linkedin: "https://rebrand.ly/linkedinLnk",
+  github: "https://github.com/adpth",
+  linkedin: "https://www.linkedin.com/in/tharunpasupuleti",
   email: "tharun14714@gmail.com",
+  phone: "+1 (219) 408-7343",
+  location: "McLean, VA, USA",
 };
 
 const NAV_ITEMS = [
@@ -42,27 +42,28 @@ const NAV_ITEMS = [
 ];
 
 const CORE_STACK = [
-  "Node.js",
-  "React",
-  "TypeScript",
+  "Python",
+  "FastAPI",
+  "LangChain",
+  "RAG",
   "PostgreSQL",
-  "MongoDB",
-  "C#",
-  "Java",
-  "ASP.NET Core",
-  "Spring Boot",
-  "Azure",
+  "pgvector",
+  "Redis",
+  "Docker",
+  "AWS",
+  "React",
 ];
 
 const EXPERIENCES = [
   {
     title: "Graduate Student Employee",
     company: "Purdue University Northwest",
-    location: "USA",
+    location: "Hammond, IN, USA",
     bullets: [
-      "Led the architecture and deployment of an interactive 3D aerospace learning platform, combining React and X3DOM. It's now actively used by over 150 engineering students.",
-      "Rebuilt the 3D asset loading pipeline to use deferred loading and compression, which reduced model loading latency by 25% and made the app usable in busy lab environments.",
-      "Built a modular React component library that lowered the barrier for faculty to create new instructional modules, cutting their turnaround time by about 40%.",
+      "Architected the Python/FastAPI backend for an AI-assisted aerospace learning platform — REST endpoints connecting a React frontend to document-processing, retrieval, and LLM content-generation services, structured for reuse across lab modules.",
+      "Built a retrieval-augmented generation (RAG) workflow that grounds LLM answers in approved course material: Python ingestion pipelines, vector-based semantic retrieval, dynamic prompt construction, and response validation to cut unsupported answers.",
+      "Orchestrated LLM interactions with LangChain — prompt templating, async API handling, and structured output parsing — with resilient handling of API failures, malformed responses, and heterogeneous document structures.",
+      "Reworked the asset and data-loading pipeline around deferred/lazy loading, reducing 3D asset latency ~25% and keeping AI and processing work off the initial render path; shipped reusable FastAPI service and React component patterns that cut new-module turnaround from days to hours (~40% less build effort).",
     ],
     date: "Oct 2025 – Jan 2026",
     link: "https://www.pnw.edu/",
@@ -72,10 +73,10 @@ const EXPERIENCES = [
     company: "Accenture",
     location: "India",
     bullets: [
-      "Joined a fast-paced Agile team to deliver enterprise web and mobile applications using React, React Native, Node.js, and Express.",
-      "Tackled database-heavy API endpoints that were struggling under load. By optimizing SQL queries and introducing Redis caching, we improved API response times by ~30%.",
-      "Refactored legacy React component hierarchies and improved state management, which brought down client-side latency by roughly 20% on critical user flows.",
-      "Helped stabilize our CI/CD pipelines with Jenkins and Docker, contributing to a 15% drop in deployment failures over 13 production releases.",
+      "Built and maintained Python backend services with FastAPI and Django — RESTful APIs, request validation, and structured response handling over PostgreSQL and SQL Server.",
+      "Optimized database-heavy endpoints with indexing, query restructuring, pagination, and caching, improving API response times ~30% under concurrent load.",
+      "Integrated LLM APIs and RAG workflows into enterprise application flows — retrieving application data and source content before model calls, with prompt engineering and output validation to keep responses grounded.",
+      "Contributed to 13 production releases on Jenkins/Docker CI/CD, helping cut deployment failures ~15% through stronger pre-deploy validation and automated tests; wrote unit and integration tests with pytest.",
     ],
     date: "Feb 2024 – Aug 2024",
     link: "https://www.accenture.com/",
@@ -85,220 +86,213 @@ const EXPERIENCES = [
     company: "Airbnb",
     location: "India",
     bullets: [
-      "Shipped the MVP for a booking and property management marketplace in just 5 months, scaling it to over 300 launch users.",
-      "Developed the core backend RESTful APIs using Node.js and Express.js, and built out the frontend booking flows in React.",
-      "Redesigned our MongoDB search queries with compound indexes (2dsphere for geospatial data) and aggregation pipelines, slashing average search query execution times from 300ms down to 40ms.",
-      "Implemented an optimistic concurrency control pattern in MongoDB to gracefully handle race conditions and prevent double-bookings during peak traffic.",
+      "Developed Python REST APIs (FastAPI, Flask) for booking, search, availability, and user workflows on a large-scale marketplace, refactoring legacy services into modular data-access, business-logic, and API layers.",
+      "Built RAG-oriented workflows with vector-based semantic retrieval and metadata filtering, plus Python data pipelines that normalized heterogeneous records into model-ready context and validated structured LLM outputs before they reached downstream services.",
+      "Cut primary property-search latency from ~300ms to ~40ms via compound and 2dsphere geospatial indexes, aggregation pipelines, pagination, and selective field retrieval.",
+      "Prevented double-bookings under peak load with optimistic concurrency (document versioning) and idempotent reservation handling keyed on unique request IDs.",
+      "Hardened API boundaries with request validation, JWT auth, and rate limiting on search/auth endpoints; tuned Docker layer caching to speed CI builds.",
     ],
     date: "Mar 2021 – Jan 2024",
     link: "https://airbnb.com/",
   }
 ];
 
-const PROJECT_CATEGORIES = ["All", "AI & Data", "Web & SaaS", "Mobile Apps", "EdTech"];
+const PROJECT_CATEGORIES = ["All", "AI & LLM", "Backend & APIs", "Data Pipelines", "Full-Stack"];
 
 const PROJECTS = [
   {
-    title: "FlareFlow",
+    title: "QueryPilot",
     role: "Solo build",
-    desc: "Built an enterprise-grade, real-time dynamic pricing engine to maximize rental revenue.",
-    impact: "Designed distributed queue processing up to 900k rates in under 12 seconds using parallel Celery workers and Redis.",
-    date: "Mar 2023 – May 2023",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjM2I4MmY2JyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzFkNGVkOCcgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTguNSAxNC41QTIuNSAyLjUgMCAwIDAgMTEgMTJjMC0xLjM4LS41LTItMS0zLTEuMDcyLTIuMTQzLS4yMjQtNC4wNTQgMi02IC41IDIuNSAyIDQuOSA0IDYuNSAyIDEuNiAzIDMuNSAzIDUuNWE3IDcgMCAxIDEtMTQgMGMwLTEuMTUzLjQzMy0yLjI5NCAxLTNhMi41IDIuNSAwIDAgMCAyLjUgMi41eicvPjwvZz48L3N2Zz4=",
+    desc: "Agentic Text-to-SQL system that answers natural language questions over SQL databases with autonomous schema exploration, query formulation, and error-driven self-repair.",
+    impact: "LangGraph state machine with 2-layer read-only security (AST parsing + SQLite URI mode); automated evaluation harness measures execution accuracy & repair rates against benchmark ground truth with an enforced CI regression gate.",
+    image: "querypilot_arch.svg",
     link: "",
     featured: true,
     status: "Production",
-    tags: ["Distributed Systems", "SaaS"],
-    tech: ["Python", "FastAPI", "Celery", "Redis", "PostgreSQL", "React"],
-    category: ["Web & SaaS", "AI & Data"],
+    tags: ["Agentic AI", "LangGraph", "Eval Harness"],
+    tech: ["Python 3.12", "LangGraph", "FastAPI", "SQLite", "Pydantic", "pytest", "GitHub Actions"],
+    category: ["AI & LLM", "Backend & APIs", "Data Pipelines"],
   },
   {
-    title: "OmniStock",
-    role: "Contract Engineer",
-    desc: "Developed a distributed inventory synchronization platform to prevent overselling across multiple e-commerce channels.",
-    impact: "Designed a centralized webhook ingestion system with Ruby on Rails and Sidekiq to handle 500+ concurrent events per minute with sub-1.5s cross-platform sync.",
-    date: "Jun 2025 – Oct 2025",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMTBiOTgxJyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzA0Nzg1NycgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTIuOTcgMTIuOTJBMiAyIDAgMCAwIDIgMTQuNjN2My4yNGEyIDIgMCAwIDAgLjk3IDEuNzFsMyAxLjhhMiAyIDAgMCAwIDIuMDYgMEwxMiAxOXYtNS41bC01LTMtNC4wMyAyLjQyeicvPjxwYXRoIGQ9J203IDE2LjUtNC43NC0yLjg1Jy8+PHBhdGggZD0nbTcgMTYuNSA1LTMnLz48cGF0aCBkPSdNNyAxNi41djUuMTcnLz48cGF0aCBkPSdNMTIgMTMuNVYxOWwzLjk3IDIuMzhhMiAyIDAgMCAwIDIuMDYgMGwzLTEuOGEyIDIgMCAwIDAgLjk3LTEuNzF2LTMuMjRhMiAyIDAgMCAwLS45Ny0xLjcxTDE3IDEwLjVsLTUgM1onLz48cGF0aCBkPSdtMTcgMTYuNS01LTMnLz48cGF0aCBkPSdtMTcgMTYuNSA0Ljc0LTIuODUnLz48cGF0aCBkPSdNMTcgMTYuNXY1LjE3Jy8+PHBhdGggZD0nTTcuOTcgNC40MkEyIDIgMCAwIDAgNyA2LjEzdjQuMzdsNSAzIDUtM1Y2LjEzYTIgMiAwIDAgMC0uOTctMS43MWwtMy0xLjhhMiAyIDAgMCAwLTIuMDYgMGwtMyAxLjh6Jy8+PHBhdGggZD0nTTEyIDggNy4yNiA1LjE1Jy8+PHBhdGggZD0nbTEyIDggNC43NC0yLjg1Jy8+PHBhdGggZD0nTTEyIDEzLjVWOCcvPjwvZz48L3N2Zz4=",
-    link: "",
-    featured: true,
-    status: "Production",
-    tags: ["Microservices", "E-commerce"],
-    tech: ["Ruby on Rails", "Sidekiq", "PostgreSQL", "Redis", "Docker"],
-    category: ["Web & SaaS", "Backend"],
-  },
-  {
-    title: "Knowvia",
+    title: "RepoMind",
     role: "Solo build",
-    desc: "Engineered an AI-powered educational platform that transforms unstructured inputs into structured learning paths.",
-    impact: "Implemented a robust multi-provider LLM fallback chain (OpenRouter, NVIDIA NIM, Ollama) and an interactive React Flow graph generation pipeline.",
-    date: "2026",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjOGI1Y2Y2JyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzZkMjhkOScgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTEyIDVhMyAzIDAgMSAwLTUuOTk3LjEyNSA0IDQgMCAwIDAtMi41MjYgNS43NyA0IDQgMCAwIDAgLjU1NiA2LjU4OEE0IDQgMCAxIDAgMTIgMThaJy8+PHBhdGggZD0nTTEyIDVhMyAzIDAgMSAxIDUuOTk3LjEyNSA0IDQgMCAwIDEgMi41MjYgNS43NyA0IDQgMCAwIDEtLjU1NiA2LjU4OEE0IDQgMCAxIDEgMTIgMThaJy8+PHBhdGggZD0nTTE1IDEzYTQuNSA0LjUgMCAwIDEtMy00IDQuNSA0LjUgMCAwIDEtMyA0Jy8+PHBhdGggZD0nTTE3LjU5OSA2LjVhMyAzIDAgMCAwIC4zOTktMS4zNzUnLz48L2c+PC9zdmc+",
+    desc: "Full-stack platform for context-aware conversations with any GitHub repo, built on a Retrieval-Augmented Generation architecture.",
+    impact: "Indexes 500+ file repositories in under 60s; pgvector nearest-neighbour search plus SSE token streaming delivers sub-200ms first-token responses with clickable source citations.",
+    image: "repomind_arch.svg",
     link: "",
     featured: true,
     status: "Production",
-    tags: ["AI SaaS", "EdTech"],
-    tech: ["Next.js 14", "React 18", "TypeScript", "Firebase", "OpenAI", "React Flow"],
-    category: ["Web & SaaS", "AI & Data"],
-  },
-  {
-    title: "KeylessGuest",
-    role: "Solo build",
-    desc: "Built a secure hospitality platform to replace physical key handovers with automated temporal digital keycards.",
-    impact: "Enforced temporal database rules with Supabase RLS achieving 100% containment. Handled Stripe Connect webhooks in under 480ms.",
-    date: "2026",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZjU5ZTBiJyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nI2I0NTMwOScgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nbTE1LjUgNy41IDIuMyAyLjNhMSAxIDAgMCAwIDEuNCAwbDIuMS0yLjFhMSAxIDAgMCAwIDAtMS40TDE5IDQnLz48cGF0aCBkPSdtMjEgMi05LjYgOS42Jy8+PGNpcmNsZSBjeD0nNy41JyBjeT0nMTUuNScgcj0nNS41Jy8+PC9nPjwvc3ZnPg==",
-    link: "",
-    featured: true,
-    status: "Production",
-    tags: ["Security", "SaaS"],
-    tech: ["Next.js 15", "React 19", "TypeScript", "Stripe API", "Supabase", "PostgreSQL"],
-    category: ["Web & SaaS"],
+    tags: ["RAG", "LLM"],
+    tech: ["Java 21", "Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "OpenAI API", "Next.js"],
+    category: ["AI & LLM", "Backend & APIs"],
   },
   {
     title: "TaskPilot AI",
     role: "Solo build",
-    desc: "Built an autonomous task-planning SaaS that turns high-level goals into executable sub-tasks.",
-    impact: "Used Next.js, FastAPI, PostgreSQL, and Gemini to dynamically auto-schedule task dependency graphs.",
-    date: "Apr – May 2026",
-    image: "taskpilot_thumbnail.png",
+    desc: "Autonomous planning service that turns natural-language goals into structured, dependency-aware task roadmaps.",
+    impact: "FastAPI backend enforces a strict JSON schema with Pydantic validation and an automatic retry loop; recursive PostgreSQL CTEs traverse the dependency graph in one round trip.",
+    image: "taskpilot_arch.svg",
     link: "https://github.com/adpth/TaskPilot-AI",
     featured: true,
     status: "Production",
-    tags: ["AI SaaS"],
+    tags: ["AI SaaS", "LLM"],
     tech: ["Next.js", "FastAPI", "Python", "PostgreSQL", "Supabase", "Gemini AI"],
-    category: ["Web & SaaS", "AI & Data"],
+    category: ["AI & LLM", "Backend & APIs", "Full-Stack"],
   },
   {
-    title: "TSRTC Medaram Jathara",
-    role: "Lead developer",
-    desc: "Built a government-backed public transit app for one of India's largest religious gatherings.",
-    impact: "Served 15,000+ active commuters with real-time GPS tracking using Redis caching and geospatial MongoDB queries.",
-    date: "Jan – Feb 2022",
-    image: "tsrtc_logo.webp",
-    link: "https://rebrand.ly/fphf08l",
+    title: "SprintForge",
+    role: "Solo build",
+    desc: "AI Kanban that breaks high-level goals into prioritized, human-in-the-loop task roadmaps.",
+    impact: "Server-side LLM calls validated against strongly typed schemas before any insert; Prisma connection pooling via PgBouncer keeps serverless load stable.",
+    image: "sprintforge_arch.svg",
+    link: "https://github.com/adpth/SprintForge",
     featured: true,
-    status: "Govt. recognized",
-    tags: ["Public Utility"],
-    tech: ["Java", "Android SDK", "Firebase", "MongoDB", "Redis", "Node.js"],
-    category: ["Mobile Apps", "Backend"],
+    status: "Production",
+    tags: ["AI SaaS"],
+    tech: ["Next.js 15", "TypeScript", "Google Generative AI", "Prisma", "PostgreSQL"],
+    category: ["AI & LLM", "Full-Stack"],
   },
   {
-    title: "Fudoo",
-    role: "Co-founder",
-    desc: "Co-founded a hyper-local food delivery app that handled campus-wide ordering.",
-    impact: "Scaled to 500+ active users and 1,000+ weekly transactions. Implemented an offline-first React Native queue to cut checkout wait time by ~50%.",
-    date: "Jun 2023 – Aug 2024",
-    image: "fudoo_thumbnail.png",
+    title: "AI NotebookLM Clone",
+    role: "Solo build",
+    desc: "Document-intelligence platform: upload PDFs and text, then get AI summaries, document-grounded Q&A, and auto-generated podcast-style audio.",
+    impact: "Decoupled Next.js + FastAPI architecture with multi-stage LangChain pipelines, JsonOutputParser-enforced structured outputs, and RAG grounding over uploaded sources.",
+    image: "notebooklm_arch.svg",
     link: "",
     featured: true,
-    status: "Play Store",
-    tags: ["Production"],
-    tech: ["React Native", "Firebase", "Node.js", "AWS", "Express.js"],
-    category: ["Mobile Apps"],
+    status: "Production",
+    tags: ["RAG", "LLM"],
+    tech: ["Python", "FastAPI", "LangChain", "Google Gemini", "Next.js", "Coqui TTS"],
+    category: ["AI & LLM", "Backend & APIs"],
   },
   {
     title: "Smart Receipt & Expense Tracker",
     role: "Solo build",
-    desc: "Developed a cross-platform mobile application that uses multimodal AI to extract and categorize receipt data instantly.",
-    impact: "Processed 500+ test receipts, achieving 95% OCR/extraction accuracy via Gemini Vision API with sub-2s average extraction latency.",
-    date: "Feb 2025 – May 2025",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMic+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUnIHkyPScxMDAlJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZWM0ODk5JyAvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nI2JlMTg1ZCcgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNTEyJyBoZWlnaHQ9JzUxMicgcng9JzEyMCcgZmlsbD0ndXJsKCNnKScgLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoMTAuNjY2KScgc3Ryb2tlPScjZmZmZmZmJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTQgMnYyMGwyLTEgMiAxIDItMSAyIDEgMi0xIDIgMSAyLTEgMiAxVjJsLTIgMS0yLTEtMiAxLTItMS0yIDEtMi0xLTIgMS0yLTF6Jy8+PHBhdGggZD0nTTE2IDE0SDgnLz48cGF0aCBkPSdNMTYgMTBIOCcvPjwvZz48L3N2Zz4=",
+    desc: "Cross-platform mobile app that uses multimodal AI to extract and categorize receipt data from a single photo.",
+    impact: "500+ test receipts at 95% extraction accuracy via Gemini Vision with sub-2s latency; FastAPI + Pydantic validation layer with automatic retry on malformed model output.",
+    image: "receipt_tracker_arch.svg",
     link: "",
     featured: true,
     status: "Production",
-    tags: ["Mobile", "AI Engineering"],
+    tags: ["Multimodal AI"],
     tech: ["React Native", "Python", "FastAPI", "Gemini Vision", "PostgreSQL", "Supabase"],
-    category: ["Mobile Apps", "AI & Data"],
+    category: ["AI & LLM", "Backend & APIs"],
+  },
+  {
+    title: "TweetMind v2",
+    role: "Solo build",
+    desc: "Modular Python pipeline that collects social data, detects trends, and generates structured insights and draft content with an LLM.",
+    impact: "Separated ingestion, normalization, trend detection, generation, and Notion sync stages; defensive REST integration plus a pytest suite with mocked services running in under 1s.",
+    image: "tweetmind_arch.svg",
+    link: "https://github.com/adpth/TweetMind",
+    featured: true,
+    status: "Production",
+    tags: ["Data Pipeline", "LLM"],
+    tech: ["Python 3.12", "Gemini API", "Apify API", "Notion API", "pytest"],
+    category: ["AI & LLM", "Data Pipelines"],
   },
 ];
 
 const SKILL_GROUPS = [
   {
     title: "Languages",
-    skills: ["JavaScript", "TypeScript", "Python", "SQL", "C#", "Java", "HTML5", "CSS3"],
-    core: ["JavaScript", "TypeScript", "Python", "SQL", "C#", "Java"],
-  },
-  {
-    title: "Frameworks & Libraries",
-    skills: [
-      "React.js 17/18/19",
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "React Native",
-      "ASP.NET Core",
-      "Entity Framework Core",
-      "Spring Boot",
-      "Tailwind CSS",
-      "Framer Motion",
-    ],
-    core: ["React.js", "Next.js", "Node.js", "ASP.NET Core", "Spring Boot"],
+    skills: ["Python", "SQL", "TypeScript", "JavaScript", "Bash", "HTML5", "CSS3"],
+    core: ["Python", "SQL", "TypeScript"],
   },
   {
     title: "Backend & APIs",
     skills: [
-      "RESTful APIs",
-      "Microservices Architecture",
-      "Authentication (JWT/OAuth)",
       "FastAPI",
+      "Flask",
+      "Django",
+      "Node.js",
       "Express.js",
-      "Web API",
-      "Spring Boot APIs",
-      "Swagger / OpenAPI",
+      "REST APIs",
+      "GraphQL",
+      "Microservices",
+      "Async Programming",
+      "Auth (JWT / OAuth2)",
+      "Rate Limiting",
     ],
-    core: ["RESTful APIs", "Microservices", "Node.js", "Authentication (JWT/OAuth)"],
+    core: ["FastAPI", "Flask", "Django", "REST APIs", "Microservices"],
+  },
+  {
+    title: "Generative AI & LLM",
+    skills: [
+      "LLM APIs (OpenAI, Gemini)",
+      "RAG",
+      "LangChain",
+      "LangGraph",
+      "Prompt Engineering",
+      "AI Agents / Agentic AI",
+      "Vector Databases (pgvector)",
+      "Embeddings",
+      "Structured Outputs",
+    ],
+    core: ["RAG", "LangChain", "LLM APIs (OpenAI, Gemini)", "Prompt Engineering", "Vector Databases (pgvector)"],
+  },
+  {
+    title: "Data & Pipelines",
+    skills: [
+      "ETL",
+      "Data Pipelines",
+      "Pandas",
+      "NumPy",
+      "Data Validation",
+      "API Data Ingestion",
+      "Web Scraping",
+      "Celery",
+    ],
+    core: ["ETL", "Data Pipelines", "Pandas"],
   },
   {
     title: "Databases & Storage",
     skills: [
       "PostgreSQL",
-      "MongoDB",
-      "SQL Server",
+      "pgvector",
       "MySQL",
+      "SQL Server",
+      "MongoDB",
       "Redis",
-      "Firebase",
-      "Supabase",
-      "AWS S3",
+      "SQLAlchemy",
+      "Alembic",
     ],
-    core: ["PostgreSQL", "MongoDB", "SQL Server", "Redis"],
+    core: ["PostgreSQL", "pgvector", "Redis", "MongoDB"],
   },
   {
     title: "Cloud & DevOps",
     skills: [
       "AWS",
-      "Google Cloud",
-      "Microsoft Azure",
+      "Azure",
+      "GCP",
       "Docker",
+      "Kubernetes",
+      "Terraform",
+      "GitHub Actions",
+      "Jenkins",
       "CI/CD",
-      "Git",
-      "Azure DevOps",
+      "Linux",
     ],
-    core: [
-      "AWS",
-      "Docker",
-      "CI/CD",
-      "Git",
-      "Microsoft Azure",
-    ],
+    core: ["AWS", "Docker", "Kubernetes", "CI/CD"],
   },
   {
-    title: "Tools & Engineering Practices",
+    title: "Testing & Observability",
     skills: [
-      "VS Code",
-      "Visual Studio",
-      "Postman",
+      "Pytest",
+      "unittest",
       "Jest",
-      "xUnit",
-      "Swagger",
-      "Vercel",
-      "Render",
+      "Integration Testing",
+      "API Testing",
+      "Logging",
+      "Monitoring",
+      "Error Handling",
     ],
-    core: ["VS Code", "Postman", "Unit Testing", "Swagger"],
+    core: ["Pytest", "Integration Testing", "Monitoring"],
   },
   {
-    title: "AI & Mobile",
-    skills: ["React Native", "Gemini AI", "LLM integration", "OpenAI", "Android SDK"],
-    core: ["React Native", "LLM integration"],
+    title: "Frontend",
+    skills: ["React", "Next.js", "React Native", "Tailwind CSS", "Framer Motion"],
+    core: ["React", "Next.js"],
   },
 ];
 
@@ -306,28 +300,35 @@ const CERTIFICATIONS = [
   {
     title: "Android Basics in Kotlin",
     issuer: "Google",
-    desc: "Android fundamentals, UI components, and app architecture using Kotlin.",
-    date: "Oct 2022",
+    desc: "Android fundamentals, UI components, background processing, and app architecture with Kotlin.",
+    date: "Certified",
     link: "https://smartinternz.com/internships/google_stu_certificates/7515989d1c2f94c0cf8c5e4aefd3d12b",
   },
   {
-    title: "Google Cloud Big Data & ML Fundamentals",
+    title: "Google Cloud Big Data & Machine Learning Fundamentals",
     issuer: "Google Cloud · Coursera",
-    desc: "Data pipelines, cloud analytics, and ML workflows using Vertex AI.",
-    date: "Aug 2022",
+    desc: "Big data processing, scalable cloud pipelines, and ML workflows using BigQuery and Vertex AI.",
+    date: "Certified",
     link: "https://www.coursera.org/account/accomplishments/verify/A8HQQ6Z5L6R9",
   },
   {
     title: "Database Programming with SQL",
     issuer: "Oracle Academy",
-    desc: "Relational database design, complex SQL query optimization, and schema normalization.",
+    desc: "Relational database modeling, complex SQL query optimization, indexing strategies, and schema normalization.",
     date: "Certified",
     link: "",
   },
   {
     title: "MERN Stack Internship",
     issuer: "Accenture",
-    desc: "Enterprise full-stack web application development, REST API design, and microservices.",
+    desc: "Enterprise full-stack application development, asynchronous processing, REST APIs, and microservices.",
+    date: "Certified",
+    link: "",
+  },
+  {
+    title: "Meta Full Stack Developer: Front-End & Back-End from Scratch Specialization",
+    issuer: "Meta · Coursera",
+    desc: "End-to-end full stack software development: React, Django, database architecture, RESTful APIs, and CI/CD pipelines.",
     date: "Certified",
     link: "",
   },
@@ -339,9 +340,9 @@ const EDUCATION = [
     school: "Purdue University Northwest",
     date: "Aug 2024 – May 2026",
     bullets: [
-      "Key Coursework: Distributed Systems, Advanced Algorithms, Artificial Intelligence, Database Management Systems",
-      "Graduate Student Employee — built the Aerospace/X3D educational 3D platform serving 150+ engineering students",
-      "Specialized in Software Engineering, System Architecture, and Distributed Cloud Computing",
+      "Key Coursework: Artificial Intelligence, Distributed Systems, Advanced Algorithms, Database Management Systems",
+      "Graduate Student Employee — built the FastAPI + RAG backend and React frontend for an AI-assisted aerospace learning platform used by 150+ engineering students",
+      "Focus: backend engineering, LLM/RAG application systems, and distributed cloud computing",
     ],
   },
   {
@@ -433,8 +434,10 @@ const MainLayout = () => {
         <div className="flex items-center justify-between px-5 py-3.5">
           <div className="flex items-center gap-3">
             <img
-              src={asset("tharun.png")}
+              src={asset("tharun.webp")}
               alt="Tharun Pasupuleti"
+              width="32"
+              height="32"
               className="w-8 h-8 rounded-full object-cover ring-1 ring-[#2563eb]/30"
             />
             <span className="font-semibold text-sm tracking-tight heading-font">
@@ -542,8 +545,10 @@ const SidebarContent = ({ activeSection, onNavigate, onClose, isMobile }) => (
     <div className="flex flex-col items-center text-center mb-8">
       <div className="relative mb-3">
         <img
-          src={asset("tharun.png")}
+          src={asset("tharun.webp")}
           alt="Tharun Pasupuleti"
+          width="96"
+          height="96"
           className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-2 ring-[#2563eb]/20 ring-offset-2 ring-offset-[#0a0a0a]"
         />
         <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-[#34d399] rounded-full border-2 border-[#0a0a0a] status-pulse" />
@@ -552,13 +557,16 @@ const SidebarContent = ({ activeSection, onNavigate, onClose, isMobile }) => (
         Tharun Pasupuleti
       </h2>
       <p className="text-xs text-[#a1a1aa] mt-0.5 font-medium">
-        Software Development Engineer (SDE)
+        Backend & AI Engineer
       </p>
       <div className="flex items-center gap-1 mt-1">
         <IconMapPin size={11} className="text-[#5c5c66]" />
         <p className="text-[10px] text-[#5c5c66] font-medium">
-          Indiana, US · Open to relocation
+          McLean, VA · Open to relocation (US)
         </p>
+      </div>
+      <div className="mt-2.5 px-2.5 py-0.5 rounded-full bg-[#2563eb]/10 border border-[#2563eb]/25 text-[10px] text-[#7ab2ff] font-mono font-medium">
+        F-1 OPT · STEM Eligible
       </div>
     </div>
 
@@ -629,9 +637,10 @@ const SidebarContent = ({ activeSection, onNavigate, onClose, isMobile }) => (
    HERO
    ================================================================ */
 const HERO_STATS = [
-  { n: "15K+", label: "Users & commuters served" },
-  { n: "30%", label: "API latency reduction" },
-  { n: "10+", label: "Production & systems builds" },
+  { n: "15K+", label: "Commuters & users served" },
+  { n: "75%", label: "Max DB latency cut (recursive CTEs)" },
+  { n: "~30%", label: "API latency reduction" },
+  { n: "13", label: "Production releases delivered" },
 ];
 
 const HeroSection = ({ onContact }) => (
@@ -642,25 +651,23 @@ const HeroSection = ({ onContact }) => (
       animate="visible"
       className="flex flex-col gap-6"
     >
-
-
       {/* Headline */}
       <motion.div variants={fadeUp}>
-        <p className="kicker mb-4">software development engineer (sde) · ms cs, purdue northwest</p>
+        <p className="kicker mb-3">Target Roles: Backend Engineer · AI &amp; LLM Systems Engineer · Full-Stack Software Engineer</p>
         <h1 className="text-[2.5rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.08] heading-font">
-          Engineering scalable systems
+          High-performance backend services and LLM architectures
           <br />
-          <span className="gradient-text">built for production.</span>
+          <span className="gradient-text">engineered for production.</span>
         </h1>
       </motion.div>
 
       {/* Bio */}
-      <motion.div variants={fadeUp} className="max-w-xl space-y-3">
+      <motion.div variants={fadeUp} className="max-w-2xl space-y-3">
         <p className="text-[#a1a1aa] text-[15px] leading-relaxed">
-          I'm a Software Development Engineer who loves building backend systems and full-stack applications that actually scale. Over the past 3+ years at Airbnb and Accenture, I've focused on shipping reliable microservices, optimizing APIs, and squashing database bottlenecks.
+          I'm a backend and AI engineer with 3+ years of experience building resilient Python microservices, distributed data pipelines, and production RAG/LLM applications. At Airbnb and Accenture, I architected RESTful APIs, optimized database bottlenecks under heavy concurrent load, and integrated AI-assisted workflows into core products.
         </p>
         <p className="text-[#71717a] text-sm leading-relaxed">
-          I hold an <span className="text-[#f4f4f5] font-medium">M.S. in Computer Science</span> from Purdue University Northwest. I enjoy taking ownership of the entire product lifecycle—from problem definition to production deployment—whether I'm building government-backed public transit apps for 15,000+ commuters or reducing API latency by 30%.
+          Holding an <span className="text-[#f4f4f5] font-medium">M.S. in Computer Science from Purdue University Northwest (GPA: 3.52)</span>, I specialize in the full lifecycle of intelligent services—from API schema design and async queue workers to vector database indexing (pgvector), strict Pydantic validation loops, and containerized cloud deployment on AWS &amp; Docker.
         </p>
       </motion.div>
 
@@ -754,7 +761,7 @@ const ExperienceSection = () => (
             : {};
           return (
             <CardWrapper
-              key={exp.title}
+              key={`${exp.company}-${exp.title}`}
               variants={fadeUp}
               custom={i}
               {...wrapperProps}
@@ -849,7 +856,7 @@ const FeaturedProjectCard = ({ project: p }) => {
     >
       {/* Media band */}
       <div className="project-media">
-        <img src={asset(p.image)} alt={`${p.title} preview`} loading="lazy" />
+        <img src={asset(p.image)} alt={`${p.title} preview`} loading="lazy" decoding="async" />
         {p.status && <span className="media-status">{p.status}</span>}
       </div>
 
@@ -862,7 +869,7 @@ const FeaturedProjectCard = ({ project: p }) => {
           )}
         </h3>
         <span className="text-[11px] font-mono text-[#5c5c66] mt-0.5">
-          {p.date} · {p.role}
+          {p.role}
         </span>
 
         <p className="text-[#a1a1aa] text-sm mt-2 leading-relaxed">{p.desc}</p>
@@ -912,7 +919,6 @@ const CompactProjectRow = ({ project: p }) => {
         {p.tech.slice(0, 3).map((t) => (
           <span key={t} className="tag tag-neutral">{t}</span>
         ))}
-        <span className="text-[11px] font-mono text-[#5c5c66] sm:ml-2 whitespace-nowrap">{p.date}</span>
       </div>
     </Wrapper>
   );
@@ -938,7 +944,7 @@ const ProjectsSection = () => {
         <motion.div variants={fadeUp}>
           <SectionHeading
             kicker="projects"
-            sub="Shipped products first — production apps, live platforms, and the stack behind each."
+            sub="Production backends, LLM/RAG applications, and data pipelines — with the stack behind each."
           >
             What I've built
           </SectionHeading>
@@ -1043,9 +1049,9 @@ const SkillsSection = () => (
       <motion.div variants={fadeUp}>
         <SectionHeading
           kicker="skills"
-          sub="Organized by layer of the stack. Highlighted skills are the ones I reach for in production."
+          sub="Backend, data, and LLM tooling I reach for in production — highlighted items are day-to-day."
         >
-          Full-stack toolkit
+          Engineering toolkit
         </SectionHeading>
       </motion.div>
 
@@ -1092,36 +1098,51 @@ const CertificationsSection = () => (
         <SectionHeading kicker="certifications">Verified credentials</SectionHeading>
       </motion.div>
 
-      <div className="flex flex-col gap-2">
-        {CERTIFICATIONS.map((c, i) => (
-          <motion.a
-            key={c.title}
-            variants={fadeUp}
-            custom={i}
-            href={c.link}
-            target="_blank"
-            rel="noreferrer"
-            className="group card-interactive p-5 sm:p-6"
-          >
-            <div className="flex items-start justify-between gap-2">
-              <div>
-                <h3 className="text-base font-bold text-[#f4f4f5] group-hover:text-[#7ab2ff] transition-colors duration-200 heading-font flex items-center gap-1.5">
-                  {c.title}
-                  <IconArrowUpRight size={14} className="text-[#5c5c66] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </h3>
-                <p className="text-xs text-[#71717a] font-medium mt-0.5">
-                  {c.issuer}
-                </p>
+      <div className="flex flex-col gap-2.5">
+        {CERTIFICATIONS.map((c, i) => {
+          const Wrapper = c.link ? motion.a : motion.div;
+          const wrapperProps = c.link
+            ? { href: c.link, target: "_blank", rel: "noreferrer" }
+            : {};
+
+          return (
+            <Wrapper
+              key={c.title}
+              variants={fadeUp}
+              custom={i}
+              {...wrapperProps}
+              className={`group card-interactive p-5 sm:p-6 ${c.link ? "cursor-pointer" : "cursor-default"}`}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <h3 className="text-base font-bold text-[#f4f4f5] group-hover:text-[#7ab2ff] transition-colors duration-200 heading-font flex items-center gap-1.5">
+                    {c.title}
+                    {c.link && (
+                      <IconArrowUpRight size={14} className="text-[#5c5c66] opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0" />
+                    )}
+                  </h3>
+                  <p className="text-xs text-[#71717a] font-medium mt-0.5">
+                    {c.issuer}
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  {c.link ? (
+                    <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-[#2563eb]/10 text-[#7ab2ff] border border-[#2563eb]/20">
+                      Verify Credential
+                    </span>
+                  ) : (
+                    <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-[#1e1e1e] text-[#a1a1aa] border border-[#2e2e2e]">
+                      Verified
+                    </span>
+                  )}
+                </div>
               </div>
-              <span className="text-xs text-[#5c5c66] font-mono shrink-0">
-                {c.date}
-              </span>
-            </div>
-            <p className="text-[#a1a1aa] text-sm mt-2 leading-relaxed">
-              {c.desc}
-            </p>
-          </motion.a>
-        ))}
+              <p className="text-[#a1a1aa] text-sm mt-2 leading-relaxed">
+                {c.desc}
+              </p>
+            </Wrapper>
+          );
+        })}
       </div>
     </motion.div>
   </section>
@@ -1190,13 +1211,13 @@ const ContactSection = () => (
       <motion.div variants={fadeUp}>
         <SectionHeading
           kicker="contact"
-          sub="Open to full-time software engineering roles. I usually reply within a day."
+          sub="Open to full-time backend, Python, and AI engineering roles. I usually reply within a day."
         >
           Let's build something
         </SectionHeading>
       </motion.div>
 
-      <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <a
           href={`mailto:${LINKS.email}`}
           className="group flex items-center gap-4 p-5 rounded-xl border border-[#1e1e1e] hover:border-[#2563eb]/30 hover:bg-[#111] transition-all duration-200 focus-ring"
@@ -1211,6 +1232,19 @@ const ContactSection = () => (
         </a>
 
         <a
+          href={`tel:${LINKS.phone.replace(/[^0-9+]/g, "")}`}
+          className="group flex items-center gap-4 p-5 rounded-xl border border-[#1e1e1e] hover:border-[#2563eb]/30 hover:bg-[#111] transition-all duration-200 focus-ring"
+        >
+          <div className="w-10 h-10 rounded-lg bg-[#2563eb]/10 flex items-center justify-center shrink-0 group-hover:bg-[#2563eb]/15 transition-colors duration-200">
+            <IconMapPin size={18} className="text-[#7ab2ff]" />
+          </div>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-[#f4f4f5]">Direct Phone</p>
+            <p className="text-xs text-[#71717a] truncate">{LINKS.phone}</p>
+          </div>
+        </a>
+
+        <a
           href={LINKS.linkedin}
           target="_blank"
           rel="noreferrer"
@@ -1221,7 +1255,7 @@ const ContactSection = () => (
           </div>
           <div>
             <p className="text-sm font-semibold text-[#f4f4f5]">LinkedIn</p>
-            <p className="text-xs text-[#71717a]">Let's connect</p>
+            <p className="text-xs text-[#71717a]">tharunpasupuleti</p>
           </div>
         </a>
 
@@ -1236,17 +1270,27 @@ const ContactSection = () => (
           </div>
           <div>
             <p className="text-sm font-semibold text-[#f4f4f5]">GitHub</p>
-            <p className="text-xs text-[#71717a]">Open source work</p>
+            <p className="text-xs text-[#71717a]">github.com/adpth</p>
           </div>
         </a>
+
+        <div className="flex items-center gap-4 p-5 rounded-xl border border-[#1e1e1e] bg-[#111]">
+          <div className="w-10 h-10 rounded-lg bg-[#2563eb]/10 flex items-center justify-center shrink-0">
+            <IconMapPin size={18} className="text-[#7ab2ff]" />
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-[#f4f4f5]">Location</p>
+            <p className="text-xs text-[#71717a]">McLean, VA (US Relocation &amp; Remote)</p>
+          </div>
+        </div>
 
         <div className="flex items-center gap-4 p-5 rounded-xl border border-[#1e1e1e] bg-[#111]">
           <div className="w-10 h-10 rounded-lg bg-[#34d399]/10 flex items-center justify-center shrink-0">
             <div className="w-3 h-3 rounded-full bg-[#34d399] status-pulse" />
           </div>
           <div>
-            <p className="text-sm font-semibold text-[#f4f4f5]">Availability</p>
-            <p className="text-xs text-[#34d399]">Open to opportunities</p>
+            <p className="text-sm font-semibold text-[#f4f4f5]">Work Authorization</p>
+            <p className="text-xs text-[#34d399]">F-1 OPT (STEM Eligible · Immediate Start)</p>
           </div>
         </div>
       </motion.div>

@@ -1,4 +1,3 @@
-import React from "react";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Tools from "./Tools";
@@ -6,7 +5,7 @@ import {
   IconGitBranch,
   IconFolder,
   IconCertificate,
-} from "@tabler/icons-react";
+} from "../icons";
 import Certifications from "./Certifications";
 
 const Home = () => {
@@ -33,18 +32,18 @@ const Home = () => {
       <div className="px-6 md:px-10 mb-24">
         <div className="flex flex-col gap-4 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl lg:text-7xl sm:mt-10 font-black">
-            SOFTWARE{" "}
-            <span className="text-neutral-700">DEVELOPMENT ENGINEER</span>
+            BACKEND{" "}
+            <span className="text-neutral-700">& AI ENGINEER</span>
           </h1>
           <p className="text-neutral-400 text-base md:text-lg text-start">
-            I’m a Software Development Engineer with <span className="text-white font-medium">3+ years of hands-on experience</span>
+            I’m a backend-focused software engineer with <span className="text-white font-medium">3+ years of hands-on experience</span>
             building and shipping{" "}
             <span className="text-white">
-              production-grade web and mobile applications.{" "}
+              production Python services and AI features.{" "}
             </span>
-            I’ve worked across the stack - from frontend interfaces to backend
-            APIs and cloud deployments - focusing on reliability, performance,
-            and real-world usability.
+            I’ve worked across REST APIs, data pipelines, and LLM/RAG
+            workflows - focusing on reliability, performance, and real-world
+            usability.
           </p>
           <p className="text-neutral-400 text-base md:text-lg text-start">
             I’ve contributed to and led projects used by real users, including

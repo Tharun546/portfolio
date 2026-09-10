@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1514"/>
+      <stop offset="100%" stop-color="#0e1f1d"/>
+    </linearGradient>
+    <linearGradient id="cardBg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#122724"/>
+      <stop offset="100%" stop-color="#0b1b19"/>
+    </linearGradient>
+    <filter id="shadow5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg5)"/>
+  
+  <!-- Grid -->
+  <g opacity="0.08" stroke="#14b8a6" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Title Badge -->
+  <g transform="translate(40, 36)">
+    <rect width="110" height="24" rx="6" fill="#134e4a" stroke="#0f766e" stroke-width="1"/>
+    <text x="12" y="16" fill="#99f6e4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="600" letter-spacing="1">SYSTEM ARCH</text>
+    <text x="124" y="17" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700">TweetMind v2 · Modular Social AI Pipeline</text>
+    <text x="124" y="38" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Decoupled Stages · Apify Ingestion · Gemini Analysis · Notion API Sync · &lt;1s Pytest Suite</text>
+  </g>
+
+  <!-- Node 1: Ingestion -->
+  <g transform="translate(40, 120)" filter="url(#shadow5)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg5)" stroke="#1a3d38" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#042f2e"/>
+    <path d="M26 31 L34 26 L42 31 L42 41 L34 46 L26 41 Z" stroke="#2dd4bf" stroke-width="1.5" fill="none"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Data Scraper</text>
+    <text x="64" y="48" fill="#2dd4bf" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">Apify Ingestion</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Twitter/X Social Scrapes</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Pydantic Normalization</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Deduplication Logic</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#134e4a"/>
+    <text x="24" y="222" fill="#ccfbf1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">Python 3.12 · Apify</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M260 245 L285 245" stroke="#14b8a6" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="285,241 295,245 285,249" fill="#14b8a6"/>
+
+  <!-- Node 2: Trend Detection & AI -->
+  <g transform="translate(295, 120)" filter="url(#shadow5)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg5)" stroke="#0d9488" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#115e59"/>
+    <path d="M27 41 L33 34 L37 38 L43 27" stroke="#99f6e4" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <polyline points="38,27 43,27 43,32" stroke="#99f6e4" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">AI Synthesis</text>
+    <text x="64" y="48" fill="#2dd4bf" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">Trend Detection</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Engagement Ranking</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Gemini Content Drafts</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Topic Clustering</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#0f766e"/>
+    <text x="24" y="222" fill="#f0fdfa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">Google Gemini API</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M515 245 L540 245" stroke="#14b8a6" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="540,241 550,245 540,249" fill="#14b8a6"/>
+
+  <!-- Node 3: Sync & Testing -->
+  <g transform="translate(550, 120)" filter="url(#shadow5)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg5)" stroke="#1a3d38" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#042f2e"/>
+    <rect x="27" y="27" width="14" height="18" rx="2" stroke="#2dd4bf" stroke-width="1.5" fill="none"/>
+    <line x1="31" y1="32" x2="37" y2="32" stroke="#2dd4bf" stroke-width="1.5"/>
+    <line x1="31" y1="36" x2="37" y2="36" stroke="#2dd4bf" stroke-width="1.5"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Sync &amp; Quality</text>
+    <text x="64" y="48" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">Notion &amp; Pytest</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Notion Database API Sync</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Mocked Service Unit Tests</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#081413"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">100% Pytest Pass &lt;1s</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#134e4a"/>
+    <text x="24" y="222" fill="#99f6e4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">Notion API · pytest</text>
+  </g>
+</svg>

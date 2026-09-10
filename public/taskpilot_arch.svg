@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg_tp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061a14"/>
+      <stop offset="100%" stop-color="#0a261e"/>
+    </linearGradient>
+    <linearGradient id="cardBg_tp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d3127"/>
+      <stop offset="100%" stop-color="#08221b"/>
+    </linearGradient>
+    <filter id="shadow_tp" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg_tp)"/>
+  
+  <!-- Grid -->
+  <g opacity="0.08" stroke="#10b981" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Title Badge -->
+  <g transform="translate(40, 36)">
+    <rect width="110" height="24" rx="6" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+    <text x="12" y="16" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="600" letter-spacing="1">SYSTEM ARCH</text>
+    <text x="124" y="17" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700">TaskPilot AI · Autonomous Goal-to-Roadmap Engine</text>
+    <text x="124" y="38" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Pydantic DAG Validation · Cyclic Dependency Feedback Loop · Recursive CTEs (75% Read Latency Cut)</text>
+  </g>
+
+  <!-- Node 1: Ingestion & UI -->
+  <g transform="translate(40, 120)" filter="url(#shadow_tp)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg_tp)" stroke="#134e40" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#064e3b"/>
+    <path d="M26 27 L42 27 M26 33 L38 33 M26 39 L42 39 M26 45 L35 45" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Goal Ingestion</text>
+    <text x="64" y="48" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">Next.js 14 Server</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Natural-Language Goals</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Async Non-Blocking API</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Middleware Session Auth</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#064e3b"/>
+    <text x="24" y="222" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">Next.js 14 · Tailwind CSS</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M260 245 L285 245" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="285,241 295,245 285,249" fill="#10b981"/>
+
+  <!-- Node 2: DAG Validation & Loop -->
+  <g transform="translate(295, 120)" filter="url(#shadow_tp)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg_tp)" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#065f46"/>
+    <circle cx="34" cy="36" r="7" stroke="#6ee7b7" stroke-width="1.5" fill="none"/>
+    <path d="M29 36 L33 40 L40 32" stroke="#6ee7b7" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">DAG Validator</text>
+    <text x="64" y="48" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">FastAPI &amp; Gemini SDK</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Strict JSON Schema Prompt</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Circular Dependency Check</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Auto-Retry Correction Loop</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#065f46"/>
+    <text x="24" y="222" fill="#d1fae5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">FastAPI · Pydantic · Gemini</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M515 245 L540 245" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="540,241 550,245 540,249" fill="#10b981"/>
+
+  <!-- Node 3: Recursive CTE & Graph -->
+  <g transform="translate(550, 120)" filter="url(#shadow_tp)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg_tp)" stroke="#134e40" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#064e3b"/>
+    <ellipse cx="34" cy="30" rx="9" ry="4" stroke="#34d399" stroke-width="1.5" fill="none"/>
+    <path d="M25 30 V42 Q34 46 43 42 V30" stroke="#34d399" stroke-width="1.5" fill="none"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Graph Database</text>
+    <text x="64" y="48" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">Recursive CTE Queries</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Single-Trip Graph Query</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">75% Lower Read Latency</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#061f18"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Zero N+1 Query Overhead</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#064e3b"/>
+    <text x="24" y="222" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">PostgreSQL · Supabase</text>
+  </g>
+</svg>

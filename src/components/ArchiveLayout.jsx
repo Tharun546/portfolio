@@ -1,5 +1,5 @@
-import { Outlet, Link, NavLink } from "react-router-dom";
-import { IconArrowLeft, IconArchive, IconTrophy } from "@tabler/icons-react";
+import { Outlet, NavLink } from "react-router-dom";
+import { IconArchive, IconTrophy } from "../icons";
 
 const ArchiveLayout = () => {
   return (

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140a16"/>
+      <stop offset="100%" stop-color="#1c0f24"/>
+    </linearGradient>
+    <linearGradient id="cardBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24142e"/>
+      <stop offset="100%" stop-color="#180b20"/>
+    </linearGradient>
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg3)"/>
+  
+  <!-- Grid -->
+  <g opacity="0.08" stroke="#f472b6" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Title Badge -->
+  <g transform="translate(40, 36)">
+    <rect width="110" height="24" rx="6" fill="#831843" stroke="#be185d" stroke-width="1"/>
+    <text x="12" y="16" fill="#fbcfe8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="600" letter-spacing="1">SYSTEM ARCH</text>
+    <text x="124" y="17" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700">Smart Expense Tracker · Multimodal AI &amp; OCR</text>
+    <text x="124" y="38" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">500+ Receipts at 95% Accuracy · Sub-2s Latency · FastAPI + Gemini Vision + Supabase</text>
+  </g>
+
+  <!-- Node 1: Mobile Client -->
+  <g transform="translate(40, 120)" filter="url(#shadow3)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg3)" stroke="#3b1d44" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#500724"/>
+    <rect x="27" y="24" width="14" height="24" rx="3" stroke="#f472b6" stroke-width="1.5" fill="none"/>
+    <circle cx="34" cy="43" r="1" fill="#f472b6"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Mobile Capture</text>
+    <text x="64" y="48" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">Expo Native Camera</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Client-Side Compression</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Base64 Image Streaming</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Offline-First Cache</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#701a75"/>
+    <text x="24" y="222" fill="#f5d0fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">React Native · Expo</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M260 245 L285 245" stroke="#db2777" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="285,241 295,245 285,249" fill="#db2777"/>
+
+  <!-- Node 2: Multimodal Extraction -->
+  <g transform="translate(295, 120)" filter="url(#shadow3)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg3)" stroke="#be185d" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#831843"/>
+    <circle cx="34" cy="36" r="7" stroke="#fbcfe8" stroke-width="1.5" fill="none"/>
+    <path d="M30 36 L38 36 M34 32 L34 40" stroke="#fbcfe8" stroke-width="1.5"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Vision OCR</text>
+    <text x="64" y="48" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">FastAPI &amp; Gemini</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Gemini 1.5 Flash Vision</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Pydantic Validation Loop</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Auto-Retry on Schema Fail</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#831843"/>
+    <text x="24" y="222" fill="#fce7f3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">Python · FastAPI</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M515 245 L540 245" stroke="#db2777" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="540,241 550,245 540,249" fill="#db2777"/>
+
+  <!-- Node 3: Persistence -->
+  <g transform="translate(550, 120)" filter="url(#shadow3)">
+    <rect width="210" height="250" rx="12" fill="url(#cardBg3)" stroke="#3b1d44" stroke-width="1.5"/>
+    <rect x="16" y="18" width="36" height="36" rx="8" fill="#500724"/>
+    <path d="M26 30 Q34 26 42 30 V42 Q34 46 26 42 Z" stroke="#f472b6" stroke-width="1.5" fill="none"/>
+    <text x="64" y="34" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">Persistence</text>
+    <text x="64" y="48" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10">RLS &amp; Relational</text>
+
+    <rect x="16" y="74" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="95" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Itemized Line Parsing</text>
+    
+    <rect x="16" y="118" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="139" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Sub-2s Total Latency</text>
+
+    <rect x="16" y="162" width="178" height="34" rx="6" fill="#14091a"/>
+    <text x="26" y="183" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Row-Level Security (RLS)</text>
+
+    <rect x="16" y="206" width="178" height="24" rx="4" fill="#701a75"/>
+    <text x="24" y="222" fill="#f5d0fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10" font-weight="600">Supabase · PostgreSQL</text>
+  </g>
+</svg>

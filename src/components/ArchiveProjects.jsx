@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 
 const projects = [
+  { year: "2026", project: { name: "QueryPilot", link: "", shortName: "QueryPilot" }, signal: "Agentic Text-to-SQL • LangGraph • Eval harness & CI gate", builtWith: ["Python 3.12", "LangGraph", "FastAPI", "SQLite", "Pydantic", "pytest", "GitHub Actions"], link: "https://github.com/adpth/QueryPilot" },
+  { year: "2026", project: { name: "RepoMind", link: "", shortName: "RepoMind" }, signal: "RAG • Vector search • LLM", builtWith: ["Java 21", "Spring Boot", "Spring AI", "PostgreSQL", "pgvector", "OpenAI API"], link: "https://github.com/adpth" },
   { year: "2026", project: { name: "TaskPilot AI", link: "https://github.com/adpth/TaskPilot-AI", shortName: "TaskPilot AI" }, signal: "AI SaaS Platform • Production-ready", builtWith: ["Next.js", "React 19", "FastAPI", "PostgreSQL", "Supabase", "Gemini AI"], link: "https://github.com/adpth/TaskPilot-AI" },
+  { year: "2026", project: { name: "SprintForge", link: "https://github.com/adpth/SprintForge", shortName: "SprintForge" }, signal: "AI Engineering • SaaS", builtWith: ["Next.js 15", "TypeScript", "Google Generative AI", "Prisma", "PostgreSQL"], link: "https://github.com/adpth/SprintForge" },
   { year: "2026", project: { name: "Knowvia", link: "", shortName: "Knowvia" }, signal: "AI Learning Platform", builtWith: ["Next.js", "Firebase", "OpenRouter"], link: "" },
   { year: "2026", project: { name: "KeylessGuest", link: "", shortName: "KeylessGuest" }, signal: "Security • SaaS", builtWith: ["Next.js", "Supabase", "Stripe"], link: "" },
-  { year: "2026", project: { name: "SprintForge", link: "", shortName: "SprintForge" }, signal: "AI Engineering • SaaS", builtWith: ["Next.js", "Prisma", "Google AI"], link: "" },
   { year: "2026", project: { name: "TaskBoard", link: "", shortName: "TaskBoard" }, signal: "State Management • Monorepo", builtWith: ["React", "Redux-Saga", "Nx"], link: "" },
   { year: "2026", project: { name: "JSONLabs", link: "", shortName: "JSONLabs" }, signal: "Frontend Learning Platform", builtWith: ["React", "JavaScript"], link: "" },
   { year: "2026", project: { name: "Remindr", link: "", shortName: "Remindr" }, signal: "Timezone-aware Utility App", builtWith: ["React 19", "Vite", "Firebase", "Luxon"], link: "" },
+  { year: "2025", project: { name: "AI NotebookLM Clone", link: "", shortName: "NotebookLM Clone" }, signal: "RAG • LangChain pipelines • FastAPI", builtWith: ["Python", "FastAPI", "LangChain", "Google Gemini", "Next.js", "Coqui TTS"], link: "https://github.com/adpth" },
+  { year: "2025", project: { name: "Smart Receipt & Expense Tracker", link: "", shortName: "Smart Tracker" }, signal: "Multimodal AI • FastAPI • Pydantic validation", builtWith: ["React Native", "Python", "FastAPI", "Gemini Vision", "PostgreSQL"], link: "https://github.com/adpth" },
+  { year: "2025", project: { name: "TweetMind v2", link: "https://github.com/adpth/TweetMind", shortName: "TweetMind v2" }, signal: "Data pipeline • LLM generation • pytest", builtWith: ["Python 3.12", "Gemini API", "Apify API", "Notion API", "pytest"], link: "https://github.com/adpth/TweetMind" },
   { year: "2025", project: { name: "OmniStock", link: "", shortName: "OmniStock" }, signal: "Distributed Microservices", builtWith: ["Ruby on Rails", "Sidekiq", "PostgreSQL"], link: "" },
-  { year: "2025", project: { name: "Smart Receipt & Expense Tracker", link: "", shortName: "Smart Tracker" }, signal: "AI Engineering • Mobile", builtWith: ["React Native", "FastAPI", "Gemini Vision"], link: "" },
   { year: "2025", project: { name: "X3D-VR for Aerospace", link: "https://xreal-xperienz.org/x3d/beta/index.html", shortName: "X3D-VR" }, signal: "Educational Technology • WebGL", builtWith: ["X3D", "X3DOM", "React"], link: "https://xreal-xperienz.org/x3d/beta/index.html" },
   { year: "2024", project: { name: "FeedbackFlow", link: "", shortName: "FeedbackFlow" }, signal: "Full-stack • SaaS", builtWith: ["React.js", "Node.js", "MongoDB"], link: "" },
   { year: "2023", project: { name: "FlareFlow", link: "", shortName: "FlareFlow" }, signal: "Distributed Systems • Pricing Engine", builtWith: ["Python", "FastAPI", "Celery", "Redis"], link: "" },
@@ -125,7 +129,7 @@ export default function ArchiveProjects() {
           All Projects
         </h1>
         <p className="text-sm text-[#a1a1aa] mt-2 font-mono">
-          Full catalog of applications, automation scripts, and academic labs.
+          Full catalog of backend services, LLM/RAG applications, data pipelines, and shipped products.
         </p>
         <div className="overflow-x-auto mt-8 border border-[#1e1e1e] rounded-xl bg-[#0e0e0e]/50 backdrop-blur-sm">
           <table className="min-w-full border-collapse text-left">

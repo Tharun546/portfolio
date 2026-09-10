@@ -13,6 +13,7 @@ lerna-debug.log*
 .expo
 
 node_modules
+.vite
 dist
 dist-ssr
 *.local
